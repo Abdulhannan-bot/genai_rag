@@ -1,0 +1,194 @@
+[
+  {
+    "id": "q01", "type": "factoid", "answerable": true,
+    "question": "Which Kafka protocol version are Quillstream-compatible clients based on?",
+    "ground_truth": "Quillstream is compatible with Kafka protocol 3.6 clients.",
+    "evidence": ["compatible with Kafka protocol 3.6 clients"]
+  },
+  {
+    "id": "q02", "type": "table_lookup", "answerable": true,
+    "question": "How much does the Scale plan cost per month and how much data transfer does it include?",
+    "ground_truth": "The Scale plan costs $2,400 per month and includes 40 TB of data transfer.",
+    "evidence": ["| Scale | $2,400 | 40 TB |"]
+  },
+  {
+    "id": "q03", "type": "table_lookup", "answerable": true,
+    "question": "What is the overage price per GB on the Growth plan?",
+    "ground_truth": "The Growth plan overage is $0.09 per GB.",
+    "evidence": ["| Growth | $399 | 5 TB | $0.09 |"]
+  },
+  {
+    "id": "q04", "type": "numeric_reasoning", "answerable": true,
+    "question": "How much would a Growth customer pay in total for a year with annual billing?",
+    "ground_truth": "Annual billing gives two months free, so the customer pays for 10 months at $399, which is $3,990.",
+    "evidence": ["pay for 10 months and use 12", "| Growth | $399 |"]
+  },
+  {
+    "id": "q05", "type": "multi_hop", "answerable": true,
+    "question": "An organization on Growth has 35 topics and wants to downgrade to Starter. What must it do first?",
+    "ground_truth": "It must delete at least 15 topics, because Starter allows a maximum of 20 topics and a downgrade is blocked while usage exceeds the target plan's limits.",
+    "evidence": ["an organization with 35 topics cannot downgrade from Growth to Starter until it deletes at least 15 topics", "| Starter | $49 | 500 GB | $0.12 | 20 |"]
+  },
+  {
+    "id": "q06", "type": "multi_hop", "answerable": true,
+    "question": "I subscribed to a new monthly Growth plan 10 days ago and have transferred 150 GB. Can I get a full refund?",
+    "ground_truth": "No. A full refund on a monthly plan requires the request to be within 14 days and less than 100 GB transferred, and 150 GB exceeds that limit.",
+    "evidence": ["within 14 days of the first charge on a new subscription", "provided that less than 100 GB of data has been transferred"]
+  },
+  {
+    "id": "q07", "type": "temporal", "answerable": true,
+    "question": "What was the refund window for monthly plans before 1 March 2026?",
+    "ground_truth": "It was 30 days, with no data-transfer condition.",
+    "evidence": ["monthly plans had a 30-day refund window with no data-transfer condition"]
+  },
+  {
+    "id": "q08", "type": "temporal", "answerable": true,
+    "question": "What did the Growth plan cost before version 4.0?",
+    "ground_truth": "The Growth plan cost $349 per month before it was increased to $399.",
+    "evidence": ["increased from $349 to $399 per month"]
+  },
+  {
+    "id": "q09", "type": "temporal", "answerable": true,
+    "question": "What was the maximum message size on Scale before version 4.2?",
+    "ground_truth": "It was 2 MB; version 4.2 raised it to 4 MB.",
+    "evidence": ["raised from 2 MB to 4 MB"]
+  },
+  {
+    "id": "q10", "type": "exact_token", "answerable": true,
+    "question": "What does error code ERR_4221 mean?",
+    "ground_truth": "The requested retention exceeds the plan maximum (HTTP 422).",
+    "evidence": ["| ERR_4221 | 422 | Requested retention exceeds the plan maximum |"]
+  },
+  {
+    "id": "q11", "type": "exact_token", "answerable": true,
+    "question": "What should a client do when it receives ERR_5003?",
+    "ground_truth": "ERR_5003 means the partition leader is temporarily unavailable, and the client should retry with exponential backoff.",
+    "evidence": ["| ERR_5003 | 503 | Partition leader temporarily unavailable |"]
+  },
+  {
+    "id": "q12", "type": "multi_hop", "answerable": true,
+    "question": "A Scale customer measured 99.92% uptime in a month. What service credit applies, and how much is that in dollars?",
+    "ground_truth": "99.92% is below the 99.95% commitment but at least 99.9%, so a 10% credit applies, which is $240 on the $2,400 monthly fee.",
+    "evidence": ["10% if uptime is below 99.95% but at least 99.9%", "| Scale | $2,400 |"]
+  },
+  {
+    "id": "q13", "type": "factoid", "answerable": true,
+    "question": "How long do customers have to claim a service credit?",
+    "ground_truth": "Credits must be claimed within 30 days after the end of the affected month.",
+    "evidence": ["claimed within 30 days after the end of the affected month"]
+  },
+  {
+    "id": "q14", "type": "exclusion", "answerable": true,
+    "question": "Does scheduled maintenance count as downtime for the SLA?",
+    "ground_truth": "Not if it was announced at least 72 hours in advance and does not exceed 4 hours in a calendar month.",
+    "evidence": ["announced at least 72 hours in advance and does not exceed 4 hours in a calendar month"]
+  },
+  {
+    "id": "q15", "type": "table_lookup", "answerable": true,
+    "question": "What is the produce rate limit on the Scale plan?",
+    "ground_truth": "The Scale plan allows 10,000 produce requests per second.",
+    "evidence": ["| Scale | 10,000 | 10,000 | 1,200 |"]
+  },
+  {
+    "id": "q16", "type": "procedural", "answerable": true,
+    "question": "What retry settings does Quillstream recommend for transient errors?",
+    "ground_truth": "Exponential backoff with jitter: an initial delay of 200 milliseconds, a multiplier of 2, a maximum of 5 attempts, and random jitter of up to 20% of each delay.",
+    "evidence": ["an initial delay of 200 milliseconds, a multiplier of 2, a maximum of 5 attempts"]
+  },
+  {
+    "id": "q17", "type": "negation", "answerable": true,
+    "question": "Which error codes should clients not retry?",
+    "ground_truth": "ERR_4031, ERR_4091, ERR_4093, ERR_4132, and ERR_4221 should not be retried, because repeating the same request will fail again.",
+    "evidence": ["Do not retry ERR_4031, ERR_4091, ERR_4093, ERR_4132, or ERR_4221"]
+  },
+  {
+    "id": "q18", "type": "access_control", "answerable": true,
+    "question": "Can a user with the Billing role view topic data?",
+    "ground_truth": "No. The Billing role can view invoices and update payment methods but cannot see topic data.",
+    "evidence": ["cannot see topic data"]
+  },
+  {
+    "id": "q19", "type": "access_control", "answerable": true,
+    "question": "Which roles are allowed to delete the organization?",
+    "ground_truth": "Only the Owner role can delete the organization.",
+    "evidence": ["| Owner | Yes | Yes | Yes | Yes |"]
+  },
+  {
+    "id": "q20", "type": "factoid", "answerable": true,
+    "question": "Which plan can get a HIPAA business associate agreement?",
+    "ground_truth": "Only the Enterprise plan.",
+    "evidence": ["available on the Enterprise plan only"]
+  },
+  {
+    "id": "q21", "type": "factoid", "answerable": true,
+    "question": "Can I change the region of an existing cluster?",
+    "ground_truth": "No. The region is fixed at cluster creation; moving requires creating a new cluster and mirroring the topics.",
+    "evidence": ["cannot be changed afterwards"]
+  },
+  {
+    "id": "q22", "type": "factoid", "answerable": true,
+    "question": "How long can I recover a deleted topic on the Starter plan?",
+    "ground_truth": "A deleted topic on Starter can be recovered for 48 hours.",
+    "evidence": ["for 48 hours on Starter"]
+  },
+  {
+    "id": "q23", "type": "negation", "answerable": true,
+    "question": "Does the Growth plan include daily backup snapshots?",
+    "ground_truth": "No. Growth topics are protected only by replication (three copies) and are not backed up separately; daily snapshots are only on Scale and Enterprise.",
+    "evidence": ["are not backed up separately"]
+  },
+  {
+    "id": "q24", "type": "comparison", "answerable": true,
+    "question": "How does the P1 response time on Scale compare with Enterprise?",
+    "ground_truth": "Scale has a 1 hour P1 response target, while Enterprise has 15 minutes.",
+    "evidence": ["| Scale | 24x7 chat and email | 1 hour |", "| Enterprise | 24x7 phone and chat, plus a dedicated Technical Account Manager | 15 minutes |"]
+  },
+  {
+    "id": "q25", "type": "factoid", "answerable": true,
+    "question": "Can Quillstream be installed on-premises?",
+    "ground_truth": "No. Quillstream is available only as a managed cloud service.",
+    "evidence": ["available only as a managed cloud service"]
+  },
+  {
+    "id": "q26", "type": "exact_token", "answerable": true,
+    "question": "Can a qs_test_ key be used against a production cluster?",
+    "ground_truth": "No. A qs_test_ key works only with sandbox clusters.",
+    "evidence": ["a qs_test_ key works only with sandbox clusters"]
+  },
+  {
+    "id": "q27", "type": "multi_hop", "answerable": true,
+    "question": "Does the free trial need a credit card, and does the refund policy apply to it?",
+    "ground_truth": "No credit card is needed, and the refund policy does not apply because a trial is not a paid subscription.",
+    "evidence": ["without entering a credit card", "so the refund policy in Section 3.2 does not apply to it"]
+  },
+  {
+    "id": "q28", "type": "multi_hop", "answerable": true,
+    "question": "What happens if a card payment fails three times?",
+    "ground_truth": "The account is suspended, and its data is retained for 30 days and then permanently deleted. Paying the balance within that window restores access.",
+    "evidence": ["If the third retry fails, the account is suspended", "retained for 30 days and then permanently deleted"]
+  },
+  {
+    "id": "q29", "type": "factoid", "answerable": true,
+    "question": "What does the Startup Program offer?",
+    "ground_truth": "It gives eligible companies 50% off the Growth plan for the first 12 months, capped at $5,000 in total credits.",
+    "evidence": ["50% off the Growth plan for the first 12 months, capped at $5,000 in total credits"]
+  },
+  {
+    "id": "q30", "type": "procedural", "answerable": true,
+    "question": "Why does creating a topic with 7-day retention fail on the Starter plan?",
+    "ground_truth": "It is rejected with ERR_4221 because the Starter maximum retention is 3 days.",
+    "evidence": ["a 7-day retention setting is rejected with ERR_4221 because the Starter maximum is 3 days"]
+  },
+  {
+    "id": "q31", "type": "unanswerable", "answerable": false,
+    "question": "What is Quillstream's support phone number for Scale customers?",
+    "ground_truth": "The handbook does not provide a support phone number for Scale customers.",
+    "evidence": []
+  },
+  {
+    "id": "q32", "type": "unanswerable", "answerable": false,
+    "question": "How many customers does Quillstream have?",
+    "ground_truth": "The handbook does not state how many customers Quillstream has.",
+    "evidence": []
+  }
+]
