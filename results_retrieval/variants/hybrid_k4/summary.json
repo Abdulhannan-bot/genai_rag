@@ -1,0 +1,22 @@
+{
+  "variant": "hybrid_k4",
+  "status": "complete",
+  "mode": "full",
+  "fingerprint": "95143acc84ea7de4",
+  "search": "hybrid",
+  "k_final": 4,
+  "rerank": false,
+  "retrieval_ms": 282.281,
+  "avg_pool_size": 14.531,
+  "pool_evidence_recall": 1.0,
+  "evidence_recall": 0.917,
+  "hit_rate": 0.967,
+  "abstain_rate_unanswerable": 1.0,
+  "false_refusal_rate_answerable": 0.133,
+  "answer_relevancy": 0.804,
+  "context_recall": 0.889,
+  "faithfulness": 0.822,
+  "llm_context_precision_with_reference": 0.911,
+  "ragas_rows_ok": 30,
+  "ragas_rows_expected": 30
+}

@@ -1,0 +1,577 @@
+{
+  "fingerprint": "b0863da66823851e",
+  "rows": [
+    {
+      "id": "q01",
+      "type": "factoid",
+      "answerable": true,
+      "question": "Which Kafka protocol version are Quillstream-compatible clients based on?",
+      "ground_truth": "Quillstream is compatible with Kafka protocol 3.6 clients.",
+      "contexts": [
+        "## 10. Frequently Asked Questions\n\n### Does Quillstream host Kafka Streams or Kafka Connect?\n\nNo. Quillstream supports Kafka protocol 3.6 clients, but Kafka Streams and Kafka Connect are not hosted by Quillstream. Customers run them in their own infrastructure.",
+        "Quillstream is a managed, Kafka-compatible event-streaming service. Customers publish messages to topics, and other applications read those messages through consumer groups. Quillstream operates the brokers, storage, and replication, so customers do not manage servers",
+        ". The service is compatible with Kafka protocol 3.6 clients, which means most existing Kafka client libraries work without code changes.",
+        "# Quillstream Customer Handbook\n\nVersion 4.2, effective 1 March 2026. This handbook describes plans, billing, limits, security, and support for Quillstream, a managed event-streaming platform. It applies to all customers unless a signed Enterprise contract states otherwise.\n\n## 1. Platform Overview"
+      ],
+      "retrieval_ms": 283.5,
+      "evidence_recall": 1.0,
+      "hit": true,
+      "answer": "Quillstream-compatible clients are based on Kafka protocol 3.6.",
+      "abstained": false
+    },
+    {
+      "id": "q02",
+      "type": "table_lookup",
+      "answerable": true,
+      "question": "How much does the Scale plan cost per month and how much data transfer does it include?",
+      "ground_truth": "The Scale plan costs $2,400 per month and includes 40 TB of data transfer.",
+      "contexts": [
+        "| Plan | Monthly price | Included data transfer | Overage per GB | Max topics | Max partitions per topic | Max retention |\n|---|---|---|---|---|---|---|\n| Starter | $49 | 500 GB | $0.12 | 20 | 12 | 3 days |\n| Growth | $399 | 5 TB | $0.09 | 200 | 48 | 14 days |",
+        "| Scale | $2,400 | 40 TB | $0.06 | 2,000 | 256 | 30 days |\n| Enterprise | Custom | Custom | Custom | Unlimited | 1,024 | 365 days |",
+        "**Monthly plans (Starter and Growth).** A customer may request a full refund within 14 days of the first charge on a new subscription, provided that less than 100 GB of data has been transferred. After 14 days, or after 100 GB of transfer, the first charge is not refundable",
+        "## 2. Plans and Pricing\n\n### 2.1 Plan comparison\n\nQuillstream offers four plans. Prices are in US dollars and billed monthly unless the annual option is chosen."
+      ],
+      "retrieval_ms": 1094.7,
+      "evidence_recall": 1.0,
+      "hit": true,
+      "answer": "The Scale plan costs $2,400 per month and includes 40 TB of data transfer.",
+      "abstained": false
+    },
+    {
+      "id": "q03",
+      "type": "table_lookup",
+      "answerable": true,
+      "question": "What is the overage price per GB on the Growth plan?",
+      "ground_truth": "The Growth plan overage is $0.09 per GB.",
+      "contexts": [
+        "| Plan | Monthly price | Included data transfer | Overage per GB | Max topics | Max partitions per topic | Max retention |\n|---|---|---|---|---|---|---|\n| Starter | $49 | 500 GB | $0.12 | 20 | 12 | 3 days |\n| Growth | $399 | 5 TB | $0.09 | 200 | 48 | 14 days |",
+        "Overage is calculated on data transfer above the included monthly amount and is added to the next invoice.\n\n### 2.2 Discounts",
+        "- Version 4.0 (August 2025): Growth plan price increased from $349 to $399 per month. Starter maximum retention reduced from 7 days to 3 days.",
+        "### Are overage charges refundable?\n\nNo. Overage charges are non-refundable on every plan.\n\n## 11. Changelog"
+      ],
+      "retrieval_ms": 603.7,
+      "evidence_recall": 1.0,
+      "hit": true,
+      "answer": "The overage price per GB on the Growth plan is $0.09.",
+      "abstained": false
+    },
+    {
+      "id": "q04",
+      "type": "numeric_reasoning",
+      "answerable": true,
+      "question": "How much would a Growth customer pay in total for a year with annual billing?",
+      "ground_truth": "Annual billing gives two months free, so the customer pays for 10 months at $399, which is $3,990.",
+      "contexts": [
+        "Customers on Starter, Growth, and Scale who pay annually receive two months free, which means they pay for 10 months and use 12. Quillstream's Startup Program gives eligible companies 50% off the Growth plan for the first 12 months, capped at $5,000 in total credits",
+        "Starter and Growth customers are charged by credit card on the billing date, which is the day the subscription started. Scale and Enterprise customers are invoiced on the 1st of each month with net 30 payment terms",
+        "**Monthly plans (Starter and Growth).** A customer may request a full refund within 14 days of the first charge on a new subscription, provided that less than 100 GB of data has been transferred. After 14 days, or after 100 GB of transfer, the first charge is not refundable",
+        "- Version 4.0 (August 2025): Growth plan price increased from $349 to $399 per month. Starter maximum retention reduced from 7 days to 3 days."
+      ],
+      "retrieval_ms": 308.8,
+      "evidence_recall": 0.5,
+      "hit": true,
+      "answer": "A Growth customer on annual billing pays for 10 months and uses 12 months. The price for the Growth plan is $399 per month. Therefore, the total cost for a year would be:\n\n10 months x $399/month = $3,990.\n\nSo, a Growth customer would pay $3,990 in total for a year with annual billing.",
+      "abstained": false
+    },
+    {
+      "id": "q05",
+      "type": "multi_hop",
+      "answerable": true,
+      "question": "An organization on Growth has 35 topics and wants to downgrade to Starter. What must it do first?",
+      "ground_truth": "It must delete at least 15 topics, because Starter allows a maximum of 20 topics and a downgrade is blocked while usage exceeds the target plan's limits.",
+      "contexts": [
+        ". A downgrade is blocked if the organization's current usage exceeds the limits of the target plan; for example, an organization with 35 topics cannot downgrade from Growth to Starter until it deletes at least 15 topics.",
+        ". A deleted topic enters a soft-delete state and can be recovered for 7 days on Growth, Scale, and Enterprise, and for 48 hours on Starter. After the soft-delete window the topic and its messages are permanently removed. When an organization is terminated, all of its data is deleted within 30 days",
+        "Customers on Starter, Growth, and Scale who pay annually receive two months free, which means they pay for 10 months and use 12. Quillstream's Startup Program gives eligible companies 50% off the Growth plan for the first 12 months, capped at $5,000 in total credits",
+        ". The Education discount is 40% off Starter and Growth for accredited institutions. Discounts cannot be combined; if a customer qualifies for more than one, the largest single discount applies."
+      ],
+      "retrieval_ms": 284.3,
+      "evidence_recall": 0.5,
+      "hit": true,
+      "answer": "The organization must delete at least 15 topics before it can downgrade from Growth to Starter.",
+      "abstained": false
+    },
+    {
+      "id": "q06",
+      "type": "multi_hop",
+      "answerable": true,
+      "question": "I subscribed to a new monthly Growth plan 10 days ago and have transferred 150 GB. Can I get a full refund?",
+      "ground_truth": "No. A full refund on a monthly plan requires the request to be within 14 days and less than 100 GB transferred, and 150 GB exceeds that limit.",
+      "contexts": [
+        "**Monthly plans (Starter and Growth).** A customer may request a full refund within 14 days of the first charge on a new subscription, provided that less than 100 GB of data has been transferred. After 14 days, or after 100 GB of transfer, the first charge is not refundable",
+        "**Annual plans (Starter and Growth).** A customer may request a full refund within 30 days of purchase. After 30 days there are no refunds and no prorated refunds, but the customer can cancel to prevent the next renewal.",
+        "### 2.4 Free trial\n\nNew organizations can start a 14-day trial of the Growth plan without entering a credit card. The trial is limited to 10 GB of data transfer. A trial is not a paid subscription, so the refund policy in Section 3.2 does not apply to it.\n\n## 3. Billing and Refunds",
+        "Before 1 March 2026, monthly plans had a 30-day refund window with no data-transfer condition. Customers who subscribed before 1 March 2026 keep these older terms until their next renewal date, after which the current policy in Section 3.2 applies. This section is kept for reference only."
+      ],
+      "retrieval_ms": 308.5,
+      "evidence_recall": 1.0,
+      "hit": true,
+      "answer": "No, you cannot get a full refund because you have transferred more than 100 GB of data.",
+      "abstained": false
+    },
+    {
+      "id": "q07",
+      "type": "temporal",
+      "answerable": true,
+      "question": "What was the refund window for monthly plans before 1 March 2026?",
+      "ground_truth": "It was 30 days, with no data-transfer condition.",
+      "contexts": [
+        "Before 1 March 2026, monthly plans had a 30-day refund window with no data-transfer condition. Customers who subscribed before 1 March 2026 keep these older terms until their next renewal date, after which the current policy in Section 3.2 applies. This section is kept for reference only.",
+        "**Monthly plans (Starter and Growth).** A customer may request a full refund within 14 days of the first charge on a new subscription, provided that less than 100 GB of data has been transferred. After 14 days, or after 100 GB of transfer, the first charge is not refundable",
+        "**Annual plans (Starter and Growth).** A customer may request a full refund within 30 days of purchase. After 30 days there are no refunds and no prorated refunds, but the customer can cancel to prevent the next renewal.",
+        "### 3.2 Refund policy (current)\n\nThe following policy has applied since 1 March 2026."
+      ],
+      "retrieval_ms": 264.4,
+      "evidence_recall": 1.0,
+      "hit": true,
+      "answer": "The refund window for monthly plans before 1 March 2026 was 30 days with no data-transfer condition.",
+      "abstained": false
+    },
+    {
+      "id": "q08",
+      "type": "temporal",
+      "answerable": true,
+      "question": "What did the Growth plan cost before version 4.0?",
+      "ground_truth": "The Growth plan cost $349 per month before it was increased to $399.",
+      "contexts": [
+        "- Version 4.0 (August 2025): Growth plan price increased from $349 to $399 per month. Starter maximum retention reduced from 7 days to 3 days.",
+        "Customers on Starter, Growth, and Scale who pay annually receive two months free, which means they pay for 10 months and use 12. Quillstream's Startup Program gives eligible companies 50% off the Growth plan for the first 12 months, capped at $5,000 in total credits",
+        "| Plan | Monthly price | Included data transfer | Overage per GB | Max topics | Max partitions per topic | Max retention |\n|---|---|---|---|---|---|---|\n| Starter | $49 | 500 GB | $0.12 | 20 | 12 | 3 days |\n| Growth | $399 | 5 TB | $0.09 | 200 | 48 | 14 days |",
+        "### 2.4 Free trial\n\nNew organizations can start a 14-day trial of the Growth plan without entering a credit card. The trial is limited to 10 GB of data transfer. A trial is not a paid subscription, so the refund policy in Section 3.2 does not apply to it.\n\n## 3. Billing and Refunds"
+      ],
+      "retrieval_ms": 282.2,
+      "evidence_recall": 1.0,
+      "hit": true,
+      "answer": "The Growth plan cost $349 per month before version 4.0.",
+      "abstained": false
+    },
+    {
+      "id": "q09",
+      "type": "temporal",
+      "answerable": true,
+      "question": "What was the maximum message size on Scale before version 4.2?",
+      "ground_truth": "It was 2 MB; version 4.2 raised it to 4 MB.",
+      "contexts": [
+        "### 5.3 Message size\n\nThe maximum message size is 1 MB on Starter and Growth, 4 MB on Scale, and 8 MB on Enterprise. Larger payloads should be stored externally, with only a reference sent through Quillstream.\n\n### 5.4 Retry guidance",
+        "- Version 4.2 (1 March 2026): New refund policy in Section 3.2. Maximum message size on Scale raised from 2 MB to 4 MB.\n- Version 4.1 (November 2025): Added the ap-south-1 (Mumbai) region.",
+        "| Scale | $2,400 | 40 TB | $0.06 | 2,000 | 256 | 30 days |\n| Enterprise | Custom | Custom | Custom | Unlimited | 1,024 | 365 days |",
+        "| ERR_4091 | 409 | Topic already exists | Use a different topic name |\n| ERR_4093 | 409 | Topic quota exceeded for the plan | Delete unused topics or upgrade |\n| ERR_4132 | 413 | Message exceeds the maximum size | Reduce the message size |"
+      ],
+      "retrieval_ms": 306.6,
+      "evidence_recall": 1.0,
+      "hit": true,
+      "answer": "The maximum message size on Scale before version 4.2 was 2 MB.",
+      "abstained": false
+    },
+    {
+      "id": "q10",
+      "type": "exact_token",
+      "answerable": true,
+      "question": "What does error code ERR_4221 mean?",
+      "ground_truth": "The requested retention exceeds the plan maximum (HTTP 422).",
+      "contexts": [
+        ". Do not retry ERR_4031, ERR_4091, ERR_4093, ERR_4132, or ERR_4221, because repeating the same request will fail again.",
+        "| Code | HTTP | Meaning | Recommended action |\n|---|---|---|---|\n| ERR_4291 | 429 | Rate limit exceeded | Wait for the Retry-After interval |\n| ERR_4031 | 403 | API key lacks the required scope | Create a key with the needed scope |",
+        "| ERR_4221 | 422 | Requested retention exceeds the plan maximum | Lower the retention setting |\n| ERR_5003 | 503 | Partition leader temporarily unavailable | Retry with exponential backoff |",
+        "Requests above the limit are rejected with HTTP status 429 and error code ERR_4291. The response includes a Retry-After header stating how many seconds to wait before trying again.\n\n### 5.2 Error codes"
+      ],
+      "retrieval_ms": 285.3,
+      "evidence_recall": 1.0,
+      "hit": true,
+      "answer": "Error code ERR_4221 means \"Requested retention exceeds the plan maximum.\" The recommended action is to lower the retention setting.",
+      "abstained": false
+    },
+    {
+      "id": "q11",
+      "type": "exact_token",
+      "answerable": true,
+      "question": "What should a client do when it receives ERR_5003?",
+      "ground_truth": "ERR_5003 means the partition leader is temporarily unavailable, and the client should retry with exponential backoff.",
+      "contexts": [
+        "For ERR_5003 and ERR_4291, clients should retry using exponential backoff with jitter. The recommended settings are an initial delay of 200 milliseconds, a multiplier of 2, a maximum of 5 attempts, and random jitter of up to 20% of each delay",
+        ". Do not retry ERR_4031, ERR_4091, ERR_4093, ERR_4132, or ERR_4221, because repeating the same request will fail again.",
+        "| Code | HTTP | Meaning | Recommended action |\n|---|---|---|---|\n| ERR_4291 | 429 | Rate limit exceeded | Wait for the Retry-After interval |\n| ERR_4031 | 403 | API key lacks the required scope | Create a key with the needed scope |",
+        "| ERR_4221 | 422 | Requested retention exceeds the plan maximum | Lower the retention setting |\n| ERR_5003 | 503 | Partition leader temporarily unavailable | Retry with exponential backoff |"
+      ],
+      "retrieval_ms": 272.4,
+      "evidence_recall": 1.0,
+      "hit": true,
+      "answer": "A client should retry using exponential backoff with jitter. The recommended settings are an initial delay of 200 milliseconds, a multiplier of 2, a maximum of 5 attempts, and random jitter of up to 20% of each delay.",
+      "abstained": false
+    },
+    {
+      "id": "q12",
+      "type": "multi_hop",
+      "answerable": true,
+      "question": "A Scale customer measured 99.92% uptime in a month. What service credit applies, and how much is that in dollars?",
+      "ground_truth": "99.92% is below the 99.95% commitment but at least 99.9%, so a 10% credit applies, which is $240 on the $2,400 monthly fee.",
+      "contexts": [
+        "### 4.2 Service credits\n\nIf measured monthly uptime falls below the commitment, the customer is eligible for a service credit calculated as a percentage of that month's fee.",
+        "For reference, 99.9% allows about 43 minutes of downtime in a 30-day month, 99.95% allows about 22 minutes, and 99.99% allows about 4 minutes.\n\n### 4.2 Service credits",
+        "| Plan | Monthly uptime commitment |\n|---|---|\n| Starter | None (best effort) |\n| Growth | 99.9% |\n| Scale | 99.95% |\n| Enterprise | 99.99% (contractual) |",
+        "- Growth: 10% if uptime is below 99.9% but at least 99.0%; 25% if below 99.0%.\n- Scale: 10% if uptime is below 99.95% but at least 99.9%; 25% if below 99.9% but at least 99.0%; 50% if below 99.0%.\n- Enterprise: as defined in the signed contract."
+      ],
+      "retrieval_ms": 308.3,
+      "evidence_recall": 0.5,
+      "hit": true,
+      "answer": "The Scale customer measured 99.92% uptime, which is below the 99.95% commitment but above 99.9%. According to the service credits table, the applicable service credit for Scale is 10% if uptime is below 99.95% but at least 99.9%. \n\nHowever, the context does not provide information about the monthly fee for the Scale plan, so I don't have enough information to calculate the dollar amount of the service credit.",
+      "abstained": true
+    },
+    {
+      "id": "q13",
+      "type": "factoid",
+      "answerable": true,
+      "question": "How long do customers have to claim a service credit?",
+      "ground_truth": "Credits must be claimed within 30 days after the end of the affected month.",
+      "contexts": [
+        "Credits must be claimed within 30 days after the end of the affected month, are applied to future invoices, and are never paid out as cash. The maximum credit in any month is 50% of that month's fee",
+        "### 4.2 Service credits\n\nIf measured monthly uptime falls below the commitment, the customer is eligible for a service credit calculated as a percentage of that month's fee.",
+        "For reference, 99.9% allows about 43 minutes of downtime in a 30-day month, 99.95% allows about 22 minutes, and 99.99% allows about 4 minutes.\n\n### 4.2 Service credits",
+        "**Annual plans (Starter and Growth).** A customer may request a full refund within 30 days of purchase. After 30 days there are no refunds and no prorated refunds, but the customer can cancel to prevent the next renewal."
+      ],
+      "retrieval_ms": 284.8,
+      "evidence_recall": 1.0,
+      "hit": true,
+      "answer": "Customers have to claim a service credit within 30 days after the end of the affected month.",
+      "abstained": false
+    },
+    {
+      "id": "q14",
+      "type": "exclusion",
+      "answerable": true,
+      "question": "Does scheduled maintenance count as downtime for the SLA?",
+      "ground_truth": "Not if it was announced at least 72 hours in advance and does not exceed 4 hours in a calendar month.",
+      "contexts": [
+        ". Scheduled maintenance does not count as downtime if it was announced at least 72 hours in advance and does not exceed 4 hours in a calendar month. Downtime caused by customer misconfiguration or force majeure events is also excluded.",
+        "## 4. Service Level Agreement\n\n### 4.1 Uptime commitments\n\nEach plan has a monthly uptime commitment, measured across all production clusters in the organization.",
+        "For reference, 99.9% allows about 43 minutes of downtime in a 30-day month, 99.95% allows about 22 minutes, and 99.99% allows about 4 minutes.\n\n### 4.2 Service credits",
+        "### 4.2 Service credits\n\nIf measured monthly uptime falls below the commitment, the customer is eligible for a service credit calculated as a percentage of that month's fee."
+      ],
+      "retrieval_ms": 268.7,
+      "evidence_recall": 1.0,
+      "hit": true,
+      "answer": "No, scheduled maintenance does not count as downtime for the SLA if it was announced at least 72 hours in advance and does not exceed 4 hours in a calendar month.",
+      "abstained": false
+    },
+    {
+      "id": "q15",
+      "type": "table_lookup",
+      "answerable": true,
+      "question": "What is the produce rate limit on the Scale plan?",
+      "ground_truth": "The Scale plan allows 10,000 produce requests per second.",
+      "contexts": [
+        "## 5. API and Limits\n\n### 5.1 Rate limits\n\n| Plan | Produce requests per second | Fetch requests per second | Admin API calls per minute |\n|---|---|---|---|\n| Starter | 100 | 100 | 60 |\n| Growth | 1,000 | 1,000 | 300 |\n| Scale | 10,000 | 10,000 | 1,200 |\n| Enterprise | Custom | Custom | Custom |",
+        "| Scale | $2,400 | 40 TB | $0.06 | 2,000 | 256 | 30 days |\n| Enterprise | Custom | Custom | Custom | Unlimited | 1,024 | 365 days |",
+        "**Scale and Enterprise.** Refunds are governed by the signed contract. There is no self-serve refund for these plans.",
+        "| Plan | Monthly uptime commitment |\n|---|---|\n| Starter | None (best effort) |\n| Growth | 99.9% |\n| Scale | 99.95% |\n| Enterprise | 99.99% (contractual) |"
+      ],
+      "retrieval_ms": 274.5,
+      "evidence_recall": 1.0,
+      "hit": true,
+      "answer": "The produce rate limit on the Scale plan is 10,000 requests per second.",
+      "abstained": false
+    },
+    {
+      "id": "q16",
+      "type": "procedural",
+      "answerable": true,
+      "question": "What retry settings does Quillstream recommend for transient errors?",
+      "ground_truth": "Exponential backoff with jitter: an initial delay of 200 milliseconds, a multiplier of 2, a maximum of 5 attempts, and random jitter of up to 20% of each delay.",
+      "contexts": [
+        "For ERR_5003 and ERR_4291, clients should retry using exponential backoff with jitter. The recommended settings are an initial delay of 200 milliseconds, a multiplier of 2, a maximum of 5 attempts, and random jitter of up to 20% of each delay",
+        "### 5.3 Message size\n\nThe maximum message size is 1 MB on Starter and Growth, 4 MB on Scale, and 8 MB on Enterprise. Larger payloads should be stored externally, with only a reference sent through Quillstream.\n\n### 5.4 Retry guidance",
+        ". If a card payment fails, Quillstream retries three times, after 1 day, 3 days, and 7 days. If the third retry fails, the account is suspended. Data in a suspended account is retained for 30 days and then permanently deleted. Paying the outstanding balance within that window restores access.",
+        "Quillstream is a managed, Kafka-compatible event-streaming service. Customers publish messages to topics, and other applications read those messages through consumer groups. Quillstream operates the brokers, storage, and replication, so customers do not manage servers"
+      ],
+      "retrieval_ms": 265.5,
+      "evidence_recall": 1.0,
+      "hit": true,
+      "answer": "Quillstream recommends retrying transient errors (ERR_5003 and ERR_4291) using exponential backoff with jitter, with the following settings: an initial delay of 200 milliseconds, a multiplier of 2, a maximum of 5 attempts, and random jitter of up to 20% of each delay.",
+      "abstained": false
+    },
+    {
+      "id": "q17",
+      "type": "negation",
+      "answerable": true,
+      "question": "Which error codes should clients not retry?",
+      "ground_truth": "ERR_4031, ERR_4091, ERR_4093, ERR_4132, and ERR_4221 should not be retried, because repeating the same request will fail again.",
+      "contexts": [
+        "Requests above the limit are rejected with HTTP status 429 and error code ERR_4291. The response includes a Retry-After header stating how many seconds to wait before trying again.\n\n### 5.2 Error codes",
+        ". Do not retry ERR_4031, ERR_4091, ERR_4093, ERR_4132, or ERR_4221, because repeating the same request will fail again.",
+        "For ERR_5003 and ERR_4291, clients should retry using exponential backoff with jitter. The recommended settings are an initial delay of 200 milliseconds, a multiplier of 2, a maximum of 5 attempts, and random jitter of up to 20% of each delay",
+        "| Code | HTTP | Meaning | Recommended action |\n|---|---|---|---|\n| ERR_4291 | 429 | Rate limit exceeded | Wait for the Retry-After interval |\n| ERR_4031 | 403 | API key lacks the required scope | Create a key with the needed scope |"
+      ],
+      "retrieval_ms": 406.8,
+      "evidence_recall": 1.0,
+      "hit": true,
+      "answer": "Clients should not retry ERR_4031, ERR_4091, ERR_4093, ERR_4132, or ERR_4221.",
+      "abstained": false
+    },
+    {
+      "id": "q18",
+      "type": "access_control",
+      "answerable": true,
+      "question": "Can a user with the Billing role view topic data?",
+      "ground_truth": "No. The Billing role can view invoices and update payment methods but cannot see topic data.",
+      "contexts": [
+        "Viewers have read-only access to metrics dashboards. The Billing role can view invoices and update payment methods but cannot see topic data. Every organization must have at least one Owner.\n\n### 6.2 Encryption",
+        "| Role | Manage topics | Manage members | View billing | Delete the organization |\n|---|---|---|---|---|\n| Owner | Yes | Yes | Yes | Yes |\n| Admin | Yes | Yes | No | No |\n| Developer | Yes | No | No | No |\n| Billing | No | No | Yes | No |\n| Viewer | No | No | No | No |",
+        "## 3. Billing and Refunds\n\n### 3.1 Invoicing and payment",
+        "## 6. Security and Access Control\n\n### 6.1 Roles and permissions"
+      ],
+      "retrieval_ms": 271.4,
+      "evidence_recall": 1.0,
+      "hit": true,
+      "answer": "No, a user with the Billing role cannot view topic data.",
+      "abstained": false
+    },
+    {
+      "id": "q19",
+      "type": "access_control",
+      "answerable": true,
+      "question": "Which roles are allowed to delete the organization?",
+      "ground_truth": "Only the Owner role can delete the organization.",
+      "contexts": [
+        "| Role | Manage topics | Manage members | View billing | Delete the organization |\n|---|---|---|---|---|\n| Owner | Yes | Yes | Yes | Yes |\n| Admin | Yes | Yes | No | No |\n| Developer | Yes | No | No | No |\n| Billing | No | No | Yes | No |\n| Viewer | No | No | No | No |",
+        "## 6. Security and Access Control\n\n### 6.1 Roles and permissions",
+        ". Enterprise organizations can enforce a mandatory rotation period.",
+        ". Scale and Enterprise customers can request a certificate of deletion."
+      ],
+      "retrieval_ms": 279.8,
+      "evidence_recall": 1.0,
+      "hit": true,
+      "answer": "The roles allowed to delete the organization are Owner.",
+      "abstained": false
+    },
+    {
+      "id": "q20",
+      "type": "factoid",
+      "answerable": true,
+      "question": "Which plan can get a HIPAA business associate agreement?",
+      "ground_truth": "Only the Enterprise plan.",
+      "contexts": [
+        ". A HIPAA business associate agreement is available on the Enterprise plan only. Clusters can be created in three regions: us-east-1 (Virginia), eu-west-1 (Ireland), and ap-south-1 (Mumbai)",
+        "### 6.2 Encryption\n\nAll traffic uses TLS 1.3, and TLS 1.2 is accepted as a minimum for older clients. Data at rest is encrypted with AES-256. Customer-managed encryption keys (BYOK) are available only on the Enterprise plan.\n\n### 6.3 Compliance and data residency",
+        "| Plan | Monthly uptime commitment |\n|---|---|\n| Starter | None (best effort) |\n| Growth | 99.9% |\n| Scale | 99.95% |\n| Enterprise | 99.99% (contractual) |",
+        "## 4. Service Level Agreement\n\n### 4.1 Uptime commitments\n\nEach plan has a monthly uptime commitment, measured across all production clusters in the organization."
+      ],
+      "retrieval_ms": 277.0,
+      "evidence_recall": 1.0,
+      "hit": true,
+      "answer": "The Enterprise plan can get a HIPAA business associate agreement.",
+      "abstained": false
+    },
+    {
+      "id": "q21",
+      "type": "factoid",
+      "answerable": true,
+      "question": "Can I change the region of an existing cluster?",
+      "ground_truth": "No. The region is fixed at cluster creation; moving requires creating a new cluster and mirroring the topics.",
+      "contexts": [
+        ". The region is fixed at cluster creation and cannot be changed afterwards; moving to another region requires creating a new cluster and mirroring the topics.",
+        ". A HIPAA business associate agreement is available on the Enterprise plan only. Clusters can be created in three regions: us-east-1 (Virginia), eu-west-1 (Ireland), and ap-south-1 (Mumbai)",
+        "- Version 4.2 (1 March 2026): New refund policy in Section 3.2. Maximum message size on Scale raised from 2 MB to 4 MB.\n- Version 4.1 (November 2025): Added the ap-south-1 (Mumbai) region.",
+        "1. Check the status page at status.quillstream.example for a known incident.\n2. Open a ticket in the support portal with the cluster ID, region, time of first occurrence, and any error codes."
+      ],
+      "retrieval_ms": 267.4,
+      "evidence_recall": 1.0,
+      "hit": true,
+      "answer": "No, you cannot change the region of an existing cluster.",
+      "abstained": false
+    },
+    {
+      "id": "q22",
+      "type": "factoid",
+      "answerable": true,
+      "question": "How long can I recover a deleted topic on the Starter plan?",
+      "ground_truth": "A deleted topic on Starter can be recovered for 48 hours.",
+      "contexts": [
+        ". A deleted topic enters a soft-delete state and can be recovered for 7 days on Growth, Scale, and Enterprise, and for 48 hours on Starter. After the soft-delete window the topic and its messages are permanently removed. When an organization is terminated, all of its data is deleted within 30 days",
+        "Each topic has a configurable retention period up to the maximum for the plan. When messages exceed the retention period, the oldest segments are deleted automatically",
+        "| Plan | Monthly price | Included data transfer | Overage per GB | Max topics | Max partitions per topic | Max retention |\n|---|---|---|---|---|---|---|\n| Starter | $49 | 500 GB | $0.12 | 20 | 12 | 3 days |\n| Growth | $399 | 5 TB | $0.09 | 200 | 48 | 14 days |",
+        "Starter and Growth topics are protected only by replication (three copies) and are not backed up separately. Scale and Enterprise clusters also receive daily snapshots, which are kept for 7 days"
+      ],
+      "retrieval_ms": 269.4,
+      "evidence_recall": 1.0,
+      "hit": true,
+      "answer": "You can recover a deleted topic on the Starter plan for 48 hours.",
+      "abstained": false
+    },
+    {
+      "id": "q23",
+      "type": "negation",
+      "answerable": true,
+      "question": "Does the Growth plan include daily backup snapshots?",
+      "ground_truth": "No. Growth topics are protected only by replication (three copies) and are not backed up separately; daily snapshots are only on Scale and Enterprise.",
+      "contexts": [
+        "Starter and Growth topics are protected only by replication (three copies) and are not backed up separately. Scale and Enterprise clusters also receive daily snapshots, which are kept for 7 days",
+        "- Version 4.0 (August 2025): Growth plan price increased from $349 to $399 per month. Starter maximum retention reduced from 7 days to 3 days.",
+        "### 7.2 Backups",
+        "| Plan | Monthly uptime commitment |\n|---|---|\n| Starter | None (best effort) |\n| Growth | 99.9% |\n| Scale | 99.95% |\n| Enterprise | 99.99% (contractual) |"
+      ],
+      "retrieval_ms": 298.6,
+      "evidence_recall": 1.0,
+      "hit": true,
+      "answer": "Yes, the Growth plan includes daily backup snapshots.",
+      "abstained": false
+    },
+    {
+      "id": "q24",
+      "type": "comparison",
+      "answerable": true,
+      "question": "How does the P1 response time on Scale compare with Enterprise?",
+      "ground_truth": "Scale has a 1 hour P1 response target, while Enterprise has 15 minutes.",
+      "contexts": [
+        "| Scale | 24x7 chat and email | 1 hour | 4 hours | 1 business day |\n| Enterprise | 24x7 phone and chat, plus a dedicated Technical Account Manager | 15 minutes | 1 hour | 4 hours |",
+        "| Scale | $2,400 | 40 TB | $0.06 | 2,000 | 256 | 30 days |\n| Enterprise | Custom | Custom | Custom | Unlimited | 1,024 | 365 days |",
+        "**Scale and Enterprise.** Refunds are governed by the signed contract. There is no self-serve refund for these plans.",
+        "| Plan | Monthly uptime commitment |\n|---|---|\n| Starter | None (best effort) |\n| Growth | 99.9% |\n| Scale | 99.95% |\n| Enterprise | 99.99% (contractual) |"
+      ],
+      "retrieval_ms": 279.7,
+      "evidence_recall": 1.0,
+      "hit": true,
+      "answer": "The P1 response time on Scale is 1 hour, while on Enterprise it is 15 minutes. Therefore, the P1 response time on Scale is longer than on Enterprise.",
+      "abstained": false
+    },
+    {
+      "id": "q25",
+      "type": "factoid",
+      "answerable": true,
+      "question": "Can Quillstream be installed on-premises?",
+      "ground_truth": "No. Quillstream is available only as a managed cloud service.",
+      "contexts": [
+        "### Can Quillstream be installed on-premises?\n\nNo. Quillstream is available only as a managed cloud service.\n\n### Can I use one API key for both production and sandbox?\n\nNo. A qs_live_ key works only with production clusters and a qs_test_ key works only with sandbox clusters.",
+        "Quillstream is a managed, Kafka-compatible event-streaming service. Customers publish messages to topics, and other applications read those messages through consumer groups. Quillstream operates the brokers, storage, and replication, so customers do not manage servers",
+        "## 1. Platform Overview\n\n### 1.1 What Quillstream is",
+        "# Quillstream Customer Handbook\n\nVersion 4.2, effective 1 March 2026. This handbook describes plans, billing, limits, security, and support for Quillstream, a managed event-streaming platform. It applies to all customers unless a signed Enterprise contract states otherwise.\n\n## 1. Platform Overview"
+      ],
+      "retrieval_ms": 280.8,
+      "evidence_recall": 1.0,
+      "hit": true,
+      "answer": "No. Quillstream is available only as a managed cloud service.",
+      "abstained": false
+    },
+    {
+      "id": "q26",
+      "type": "exact_token",
+      "answerable": true,
+      "question": "Can a qs_test_ key be used against a production cluster?",
+      "ground_truth": "No. A qs_test_ key works only with sandbox clusters.",
+      "contexts": [
+        "API keys start with qs_live_ for production clusters and qs_test_ for sandbox clusters. A key is displayed only once at creation, so it must be copied immediately. Each key has one or more scopes: produce, consume, or admin. Quillstream recommends rotating keys every 90 days",
+        "### Can Quillstream be installed on-premises?\n\nNo. Quillstream is available only as a managed cloud service.\n\n### Can I use one API key for both production and sandbox?\n\nNo. A qs_live_ key works only with production clusters and a qs_test_ key works only with sandbox clusters.",
+        "```bash\nqs-cli login --key qs_live_xxxxxxxx\nqs-cli topic create orders --partitions 6 --retention 7d\n```\n\nNote: on the Starter plan, a 7-day retention setting is rejected with ERR_4221 because the Starter maximum is 3 days. Use `--retention 3d` or upgrade the plan.",
+        "Follow these steps to send your first message.\n\n1. Create an organization and choose a region.\n2. Create a cluster, which takes about 6 minutes to provision.\n3. Create an API key with the scopes you need.\n4. Install the command-line tool with `pip install qs-cli`.\n5. Create your first topic."
+      ],
+      "retrieval_ms": 304.0,
+      "evidence_recall": 1.0,
+      "hit": true,
+      "answer": "No, a qs_test_ key works only with sandbox clusters and cannot be used against a production cluster.",
+      "abstained": false
+    },
+    {
+      "id": "q27",
+      "type": "multi_hop",
+      "answerable": true,
+      "question": "Does the free trial need a credit card, and does the refund policy apply to it?",
+      "ground_truth": "No credit card is needed, and the refund policy does not apply because a trial is not a paid subscription.",
+      "contexts": [
+        "### 2.4 Free trial\n\nNew organizations can start a 14-day trial of the Growth plan without entering a credit card. The trial is limited to 10 GB of data transfer. A trial is not a paid subscription, so the refund policy in Section 3.2 does not apply to it.\n\n## 3. Billing and Refunds",
+        "**Monthly plans (Starter and Growth).** A customer may request a full refund within 14 days of the first charge on a new subscription, provided that less than 100 GB of data has been transferred. After 14 days, or after 100 GB of transfer, the first charge is not refundable",
+        "**Annual plans (Starter and Growth).** A customer may request a full refund within 30 days of purchase. After 30 days there are no refunds and no prorated refunds, but the customer can cancel to prevent the next renewal.",
+        ". Renewal charges are never refundable."
+      ],
+      "retrieval_ms": 307.3,
+      "evidence_recall": 1.0,
+      "hit": true,
+      "answer": "The free trial does not need a credit card, and the refund policy does not apply to it.",
+      "abstained": false
+    },
+    {
+      "id": "q28",
+      "type": "multi_hop",
+      "answerable": true,
+      "question": "What happens if a card payment fails three times?",
+      "ground_truth": "The account is suspended, and its data is retained for 30 days and then permanently deleted. Paying the balance within that window restores access.",
+      "contexts": [
+        ". If a card payment fails, Quillstream retries three times, after 1 day, 3 days, and 7 days. If the third retry fails, the account is suspended. Data in a suspended account is retained for 30 days and then permanently deleted. Paying the outstanding balance within that window restores access.",
+        ". Do not retry ERR_4031, ERR_4091, ERR_4093, ERR_4132, or ERR_4221, because repeating the same request will fail again.",
+        "## 3. Billing and Refunds\n\n### 3.1 Invoicing and payment",
+        "Requests above the limit are rejected with HTTP status 429 and error code ERR_4291. The response includes a Retry-After header stating how many seconds to wait before trying again.\n\n### 5.2 Error codes"
+      ],
+      "retrieval_ms": 287.5,
+      "evidence_recall": 1.0,
+      "hit": true,
+      "answer": "If a card payment fails three times, the account is suspended. Data in a suspended account is retained for 30 days and then permanently deleted. Paying the outstanding balance within that window restores access.",
+      "abstained": false
+    },
+    {
+      "id": "q29",
+      "type": "factoid",
+      "answerable": true,
+      "question": "What does the Startup Program offer?",
+      "ground_truth": "It gives eligible companies 50% off the Growth plan for the first 12 months, capped at $5,000 in total credits.",
+      "contexts": [
+        "Customers on Starter, Growth, and Scale who pay annually receive two months free, which means they pay for 10 months and use 12. Quillstream's Startup Program gives eligible companies 50% off the Growth plan for the first 12 months, capped at $5,000 in total credits",
+        ". The Education discount is 40% off Starter and Growth for accredited institutions. Discounts cannot be combined; if a customer qualifies for more than one, the largest single discount applies.",
+        "**Annual plans (Starter and Growth).** A customer may request a full refund within 30 days of purchase. After 30 days there are no refunds and no prorated refunds, but the customer can cancel to prevent the next renewal.",
+        "Starter and Growth customers are charged by credit card on the billing date, which is the day the subscription started. Scale and Enterprise customers are invoiced on the 1st of each month with net 30 payment terms"
+      ],
+      "retrieval_ms": 408.0,
+      "evidence_recall": 1.0,
+      "hit": true,
+      "answer": "The Startup Program offers eligible companies 50% off the Growth plan for the first 12 months, capped at $5,000 in total credits.",
+      "abstained": false
+    },
+    {
+      "id": "q30",
+      "type": "procedural",
+      "answerable": true,
+      "question": "Why does creating a topic with 7-day retention fail on the Starter plan?",
+      "ground_truth": "It is rejected with ERR_4221 because the Starter maximum retention is 3 days.",
+      "contexts": [
+        "Each topic has a configurable retention period up to the maximum for the plan. When messages exceed the retention period, the oldest segments are deleted automatically",
+        "```bash\nqs-cli login --key qs_live_xxxxxxxx\nqs-cli topic create orders --partitions 6 --retention 7d\n```\n\nNote: on the Starter plan, a 7-day retention setting is rejected with ERR_4221 because the Starter maximum is 3 days. Use `--retention 3d` or upgrade the plan.",
+        ". A deleted topic enters a soft-delete state and can be recovered for 7 days on Growth, Scale, and Enterprise, and for 48 hours on Starter. After the soft-delete window the topic and its messages are permanently removed. When an organization is terminated, all of its data is deleted within 30 days",
+        "| Plan | Monthly price | Included data transfer | Overage per GB | Max topics | Max partitions per topic | Max retention |\n|---|---|---|---|---|---|---|\n| Starter | $49 | 500 GB | $0.12 | 20 | 12 | 3 days |\n| Growth | $399 | 5 TB | $0.09 | 200 | 48 | 14 days |"
+      ],
+      "retrieval_ms": 276.2,
+      "evidence_recall": 1.0,
+      "hit": true,
+      "answer": "Creating a topic with 7-day retention fails on the Starter plan because the maximum retention setting allowed for the Starter plan is 3 days.",
+      "abstained": false
+    },
+    {
+      "id": "q31",
+      "type": "unanswerable",
+      "answerable": false,
+      "question": "What is Quillstream's support phone number for Scale customers?",
+      "ground_truth": "The handbook does not provide a support phone number for Scale customers.",
+      "contexts": [
+        "# Quillstream Customer Handbook\n\nVersion 4.2, effective 1 March 2026. This handbook describes plans, billing, limits, security, and support for Quillstream, a managed event-streaming platform. It applies to all customers unless a signed Enterprise contract states otherwise.\n\n## 1. Platform Overview",
+        "Quillstream is a managed, Kafka-compatible event-streaming service. Customers publish messages to topics, and other applications read those messages through consumer groups. Quillstream operates the brokers, storage, and replication, so customers do not manage servers",
+        "| Scale | 24x7 chat and email | 1 hour | 4 hours | 1 business day |\n| Enterprise | 24x7 phone and chat, plus a dedicated Technical Account Manager | 15 minutes | 1 hour | 4 hours |",
+        "1. Check the status page at status.quillstream.example for a known incident.\n2. Open a ticket in the support portal with the cluster ID, region, time of first occurrence, and any error codes."
+      ],
+      "retrieval_ms": 276.7,
+      "answer": "I don't have enough information.",
+      "abstained": true
+    },
+    {
+      "id": "q32",
+      "type": "unanswerable",
+      "answerable": false,
+      "question": "How many customers does Quillstream have?",
+      "ground_truth": "The handbook does not state how many customers Quillstream has.",
+      "contexts": [
+        "Quillstream is a managed, Kafka-compatible event-streaming service. Customers publish messages to topics, and other applications read those messages through consumer groups. Quillstream operates the brokers, storage, and replication, so customers do not manage servers",
+        "# Quillstream Customer Handbook\n\nVersion 4.2, effective 1 March 2026. This handbook describes plans, billing, limits, security, and support for Quillstream, a managed event-streaming platform. It applies to all customers unless a signed Enterprise contract states otherwise.\n\n## 1. Platform Overview",
+        "## 1. Platform Overview\n\n### 1.1 What Quillstream is",
+        "## 2. Plans and Pricing\n\n### 2.1 Plan comparison\n\nQuillstream offers four plans. Prices are in US dollars and billed monthly unless the annual option is chosen."
+      ],
+      "retrieval_ms": 267.7,
+      "answer": "I don't have enough information.",
+      "abstained": true
+    }
+  ]
+}

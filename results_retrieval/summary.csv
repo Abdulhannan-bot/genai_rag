@@ -1,0 +1,7 @@
+variant,status,mode,fingerprint,search,k_final,rerank,retrieval_ms,avg_pool_size,pool_evidence_recall,evidence_recall,hit_rate,abstain_rate_unanswerable,false_refusal_rate_answerable,answer_relevancy,context_recall,faithfulness,llm_context_precision_with_reference,ragas_rows_ok,ragas_rows_expected,top_score_answerable,top_score_unanswerable
+vec_k4,complete,full,077cbb7e472634c8,vector,4,False,304.844,4.0,0.967,0.967,1.0,1.0,0.067,0.862,0.967,0.878,0.955,30,30,,
+vec_k8,complete,full,f527ffeb03d2c992,vector,8,False,291.978,8.0,0.983,0.983,1.0,1.0,0.067,0.86,0.939,0.783,0.934,30,30,,
+hybrid_k4,complete,full,95143acc84ea7de4,hybrid,4,False,282.281,14.531,1.0,0.917,0.967,1.0,0.133,0.804,0.889,0.822,0.911,30,30,,
+hybrid_k8,complete,full,01a6a383ab7a1079,hybrid,8,False,286.822,14.531,1.0,0.983,1.0,1.0,0.033,0.883,0.967,0.908,0.868,30,30,,
+vec_rerank_top4,complete,full,8855142374d2a9ce,vector,4,True,9842.05,10.0,1.0,0.933,0.967,1.0,0.1,0.833,0.922,0.825,0.886,30,30,0.713,0.174
+hybrid_rerank_top4,complete,full,929e79146af89237,hybrid,4,True,1754.0,14.531,1.0,0.933,0.967,1.0,0.133,0.812,0.922,0.789,0.886,30,30,0.713,0.174

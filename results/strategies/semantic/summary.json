@@ -1,0 +1,20 @@
+{
+  "strategy": "semantic",
+  "status": "complete",
+  "mode": "full",
+  "fingerprint": "b0863da66823851e",
+  "n_chunks": 9,
+  "avg_chars": 1577,
+  "max_chars": 5036,
+  "retrieval_ms": 295.753,
+  "evidence_recall": 0.967,
+  "hit_rate": 0.967,
+  "abstain_rate_unanswerable": 1.0,
+  "false_refusal_rate_answerable": 0.1,
+  "answer_relevancy": 0.801,
+  "context_recall": 0.967,
+  "faithfulness": 0.773,
+  "llm_context_precision_with_reference": 0.682,
+  "ragas_rows_ok": 30,
+  "ragas_rows_expected": 30
+}

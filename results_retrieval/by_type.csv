@@ -1,0 +1,12 @@
+type,vec_k4,vec_k8,hybrid_k4,hybrid_k8,vec_rerank_top4,hybrid_rerank_top4
+access_control,1.0,1.0,1.0,1.0,1.0,1.0
+comparison,1.0,1.0,1.0,1.0,1.0,1.0
+exact_token,1.0,1.0,1.0,1.0,1.0,1.0
+exclusion,1.0,1.0,1.0,1.0,1.0,1.0
+factoid,1.0,1.0,0.86,1.0,1.0,1.0
+multi_hop,0.8,0.9,0.8,0.9,0.8,0.8
+negation,1.0,1.0,1.0,1.0,1.0,1.0
+numeric_reasoning,1.0,1.0,0.5,1.0,1.0,1.0
+procedural,1.0,1.0,1.0,1.0,1.0,1.0
+table_lookup,1.0,1.0,1.0,1.0,0.67,0.67
+temporal,1.0,1.0,1.0,1.0,1.0,1.0

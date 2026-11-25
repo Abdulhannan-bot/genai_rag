@@ -1,0 +1,22 @@
+{
+  "variant": "vec_k4",
+  "status": "complete",
+  "mode": "full",
+  "fingerprint": "077cbb7e472634c8",
+  "search": "vector",
+  "k_final": 4,
+  "rerank": false,
+  "retrieval_ms": 304.844,
+  "avg_pool_size": 4.0,
+  "pool_evidence_recall": 0.967,
+  "evidence_recall": 0.967,
+  "hit_rate": 1.0,
+  "abstain_rate_unanswerable": 1.0,
+  "false_refusal_rate_answerable": 0.067,
+  "answer_relevancy": 0.862,
+  "context_recall": 0.967,
+  "faithfulness": 0.878,
+  "llm_context_precision_with_reference": 0.955,
+  "ragas_rows_ok": 30,
+  "ragas_rows_expected": 30
+}

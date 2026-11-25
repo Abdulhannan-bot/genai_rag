@@ -1,0 +1,37 @@
+variant,id,type,answerable,retrieval_ms,pool_size,evidence_recall,hit,pool_evidence_recall,answer,abstained,faithfulness,answer_relevancy,llm_context_precision_with_reference,context_recall
+vec_k4,q01,factoid,True,445.9,4,1.0,True,1.0,Quillstream-compatible clients are based on Kafka protocol version 3.6.,False,1.0,0.8502562817735814,0.99999999995,1.0
+vec_k4,q02,table_lookup,True,301.3,4,1.0,True,1.0,"The Scale plan costs $2,400 per month and includes 40 TB of data transfer.",False,1.0,0.8708763826584232,0.9999999999,1.0
+vec_k4,q03,table_lookup,True,311.4,4,1.0,True,1.0,The overage price per GB on the Growth plan is $0.09.,False,1.0,1.0,0.9999999999,1.0
+vec_k4,q04,numeric_reasoning,True,309.3,4,1.0,True,1.0,"A Growth customer who pays annually receives two months free, meaning they pay for 10 months. The monthly price for the Growth plan is $399. Therefore, the total cost for a year with annual billing would be:
+
+10 months x $399 = $3,990. 
+
+So, a Growth customer would pay $3,990 in total for a year with annual billing.",False,1.0,0.8972086331074233,0.99999999995,1.0
+vec_k4,q05,multi_hop,True,275.7,4,0.5,True,0.5,The organization must delete at least 15 topics before it can downgrade from Growth to Starter.,False,1.0,0.8682988804258321,0.999999999975,1.0
+vec_k4,q06,multi_hop,True,281.4,4,1.0,True,1.0,"No, you cannot get a full refund because you have transferred more than 100 GB of data.",False,0.0,0.7256687056422958,0.999999999975,0.5
+vec_k4,q07,temporal,True,292.5,4,1.0,True,1.0,The refund window for monthly plans before 1 March 2026 was 30 days.,False,1.0,1.0000000000000002,0.9999999999,1.0
+vec_k4,q08,temporal,True,295.0,4,1.0,True,1.0,The Growth plan cost before version 4.0 was $349 per month.,False,1.0,0.9670424866318904,0.9999999999,1.0
+vec_k4,q09,temporal,True,289.3,4,1.0,True,1.0,The maximum message size on Scale before version 4.2 was 2 MB.,False,1.0,0.9999999999999997,0.49999999995,1.0
+vec_k4,q10,exact_token,True,289.5,4,1.0,True,1.0,"Error code ERR_4221 means ""Requested retention exceeds the plan maximum."" The recommended action is to lower the retention setting.",False,1.0,0.949727524206481,0.9999999999,1.0
+vec_k4,q11,exact_token,True,408.3,4,1.0,True,1.0,"A client should retry using exponential backoff with jitter when it receives ERR_5003. The recommended settings are an initial delay of 200 milliseconds, a multiplier of 2, a maximum of 5 attempts, and random jitter of up to 20% of each delay.",False,1.0,0.9999996693118677,0.99999999995,1.0
+vec_k4,q12,multi_hop,True,280.0,4,0.5,True,0.5,"The Scale customer measured 99.92% uptime, which is below 99.95% but at least 99.0%. According to the context, this qualifies for a 25% service credit. However, the dollar amount of the service credit cannot be determined without knowing the monthly fee for the Scale customer. Therefore, I don't have enough information to provide the dollar amount.",True,0.3333333333333333,0.0,0.9999999999666667,0.5
+vec_k4,q13,factoid,True,260.2,4,1.0,True,1.0,Customers have 30 days to claim a service credit after the end of the affected month.,False,1.0,0.9066524777547165,0.8333333332916666,1.0
+vec_k4,q14,exclusion,True,311.6,4,1.0,True,1.0,"No, scheduled maintenance does not count as downtime if it was announced at least 72 hours in advance and does not exceed 4 hours in a calendar month.",False,1.0,0.895551883459318,0.9999999999,1.0
+vec_k4,q15,table_lookup,True,267.2,4,1.0,True,1.0,"The produce rate limit on the Scale plan is 10,000 requests per second.",False,1.0,0.9999996215369628,0.9999999999,1.0
+vec_k4,q16,procedural,True,268.9,4,1.0,True,1.0,"Quillstream recommends the following retry settings for transient errors: an initial delay of 200 milliseconds, a multiplier of 2, a maximum of 5 attempts, and random jitter of up to 20% of each delay.",False,1.0,0.9999999999999999,0.9999999999,1.0
+vec_k4,q17,negation,True,283.6,4,1.0,True,1.0,"Clients should not retry the error codes ERR_4031, ERR_4091, ERR_4093, ERR_4132, or ERR_4221.",False,1.0,0.9861252073913488,0.99999999995,1.0
+vec_k4,q18,access_control,True,304.9,4,1.0,True,1.0,"No, a user with the Billing role cannot view topic data.",False,1.0,0.9999999999999999,0.9999999999,1.0
+vec_k4,q19,access_control,True,279.7,4,1.0,True,1.0,Only the Owner role is allowed to delete the organization.,False,0.0,0.8773801061517572,0.9999999999,1.0
+vec_k4,q20,factoid,True,275.6,4,1.0,True,1.0,The Enterprise plan can get a HIPAA business associate agreement.,False,1.0,0.5727617352178621,0.99999999995,1.0
+vec_k4,q21,factoid,True,280.3,4,1.0,True,1.0,"No, the region is fixed at cluster creation and cannot be changed afterwards.",False,1.0,0.8560787249714199,0.7499999999625,1.0
+vec_k4,q22,factoid,True,282.9,4,1.0,True,1.0,You can recover a deleted topic on the Starter plan for 48 hours.,False,1.0,0.9965638382049069,0.7499999999625,1.0
+vec_k4,q23,negation,True,267.2,4,1.0,True,1.0,"Yes, the Growth plan includes daily backup snapshots.",False,0.0,1.0000000000000002,0.9999999999,1.0
+vec_k4,q24,comparison,True,305.3,4,1.0,True,1.0,"The P1 response time on Scale is 1 hour, while on Enterprise it is 15 minutes. Therefore, the P1 response time on Scale is longer than on Enterprise.",False,1.0,0.9868970081475975,0.9999999999,1.0
+vec_k4,q25,factoid,True,272.1,4,1.0,True,1.0,I don't have enough information.,True,1.0,0.0,0.9999999999666667,1.0
+vec_k4,q26,exact_token,True,324.5,4,1.0,True,1.0,"No, a qs_test_ key works only with sandbox clusters and cannot be used against a production cluster.",False,1.0,0.9855279199058945,0.99999999995,1.0
+vec_k4,q27,multi_hop,True,284.4,4,1.0,True,1.0,"The free trial does not need a credit card, and the refund policy does not apply to it.",False,1.0,0.9501053414346452,0.9999999999,1.0
+vec_k4,q28,multi_hop,True,502.9,4,1.0,True,1.0,"If a card payment fails three times, the account is suspended. Data in a suspended account is retained for 30 days and then permanently deleted. Paying the outstanding balance within that window restores access.",False,1.0,0.999999773425027,0.9999999999,1.0
+vec_k4,q29,factoid,True,291.9,4,1.0,True,1.0,"The Startup Program offers eligible companies 50% off the Growth plan for the first 12 months, capped at $5,000 in total credits.",False,1.0,0.7295992184897107,0.9999999999,1.0
+vec_k4,q30,procedural,True,316.0,4,1.0,True,1.0,Creating a topic with 7-day retention fails on the Starter plan because the maximum retention setting for the Starter plan is 3 days.,False,1.0,1.0000000000000002,0.8055555555287036,1.0
+vec_k4,q31,unanswerable,False,307.6,4,,,,I don't have enough information.,True,,,,
+vec_k4,q32,unanswerable,False,288.6,4,,,,I don't have enough information.,True,,,,

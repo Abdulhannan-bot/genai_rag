@@ -1,0 +1,222 @@
+variant,id,type,answerable,retrieval_ms,pool_size,evidence_recall,hit,pool_evidence_recall,answer,abstained,faithfulness,answer_relevancy,llm_context_precision_with_reference,context_recall,top_score
+vec_k4,q01,factoid,True,445.9,4,1.0,True,1.0,Quillstream-compatible clients are based on Kafka protocol version 3.6.,False,1.0,0.8502562817735814,0.99999999995,1.0,
+vec_k4,q02,table_lookup,True,301.3,4,1.0,True,1.0,"The Scale plan costs $2,400 per month and includes 40 TB of data transfer.",False,1.0,0.8708763826584232,0.9999999999,1.0,
+vec_k4,q03,table_lookup,True,311.4,4,1.0,True,1.0,The overage price per GB on the Growth plan is $0.09.,False,1.0,1.0,0.9999999999,1.0,
+vec_k4,q04,numeric_reasoning,True,309.3,4,1.0,True,1.0,"A Growth customer who pays annually receives two months free, meaning they pay for 10 months. The monthly price for the Growth plan is $399. Therefore, the total cost for a year with annual billing would be:
+
+10 months x $399 = $3,990. 
+
+So, a Growth customer would pay $3,990 in total for a year with annual billing.",False,1.0,0.8972086331074233,0.99999999995,1.0,
+vec_k4,q05,multi_hop,True,275.7,4,0.5,True,0.5,The organization must delete at least 15 topics before it can downgrade from Growth to Starter.,False,1.0,0.8682988804258321,0.999999999975,1.0,
+vec_k4,q06,multi_hop,True,281.4,4,1.0,True,1.0,"No, you cannot get a full refund because you have transferred more than 100 GB of data.",False,0.0,0.7256687056422958,0.999999999975,0.5,
+vec_k4,q07,temporal,True,292.5,4,1.0,True,1.0,The refund window for monthly plans before 1 March 2026 was 30 days.,False,1.0,1.0000000000000002,0.9999999999,1.0,
+vec_k4,q08,temporal,True,295.0,4,1.0,True,1.0,The Growth plan cost before version 4.0 was $349 per month.,False,1.0,0.9670424866318904,0.9999999999,1.0,
+vec_k4,q09,temporal,True,289.3,4,1.0,True,1.0,The maximum message size on Scale before version 4.2 was 2 MB.,False,1.0,0.9999999999999996,0.49999999995,1.0,
+vec_k4,q10,exact_token,True,289.5,4,1.0,True,1.0,"Error code ERR_4221 means ""Requested retention exceeds the plan maximum."" The recommended action is to lower the retention setting.",False,1.0,0.949727524206481,0.9999999999,1.0,
+vec_k4,q11,exact_token,True,408.3,4,1.0,True,1.0,"A client should retry using exponential backoff with jitter when it receives ERR_5003. The recommended settings are an initial delay of 200 milliseconds, a multiplier of 2, a maximum of 5 attempts, and random jitter of up to 20% of each delay.",False,1.0,0.9999996693118676,0.99999999995,1.0,
+vec_k4,q12,multi_hop,True,280.0,4,0.5,True,0.5,"The Scale customer measured 99.92% uptime, which is below 99.95% but at least 99.0%. According to the context, this qualifies for a 25% service credit. However, the dollar amount of the service credit cannot be determined without knowing the monthly fee for the Scale customer. Therefore, I don't have enough information to provide the dollar amount.",True,0.3333333333333333,0.0,0.9999999999666668,0.5,
+vec_k4,q13,factoid,True,260.2,4,1.0,True,1.0,Customers have 30 days to claim a service credit after the end of the affected month.,False,1.0,0.9066524777547164,0.8333333332916666,1.0,
+vec_k4,q14,exclusion,True,311.6,4,1.0,True,1.0,"No, scheduled maintenance does not count as downtime if it was announced at least 72 hours in advance and does not exceed 4 hours in a calendar month.",False,1.0,0.895551883459318,0.9999999999,1.0,
+vec_k4,q15,table_lookup,True,267.2,4,1.0,True,1.0,"The produce rate limit on the Scale plan is 10,000 requests per second.",False,1.0,0.9999996215369628,0.9999999999,1.0,
+vec_k4,q16,procedural,True,268.9,4,1.0,True,1.0,"Quillstream recommends the following retry settings for transient errors: an initial delay of 200 milliseconds, a multiplier of 2, a maximum of 5 attempts, and random jitter of up to 20% of each delay.",False,1.0,1.0,0.9999999999,1.0,
+vec_k4,q17,negation,True,283.6,4,1.0,True,1.0,"Clients should not retry the error codes ERR_4031, ERR_4091, ERR_4093, ERR_4132, or ERR_4221.",False,1.0,0.9861252073913488,0.99999999995,1.0,
+vec_k4,q18,access_control,True,304.9,4,1.0,True,1.0,"No, a user with the Billing role cannot view topic data.",False,1.0,1.0,0.9999999999,1.0,
+vec_k4,q19,access_control,True,279.7,4,1.0,True,1.0,Only the Owner role is allowed to delete the organization.,False,0.0,0.8773801061517572,0.9999999999,1.0,
+vec_k4,q20,factoid,True,275.6,4,1.0,True,1.0,The Enterprise plan can get a HIPAA business associate agreement.,False,1.0,0.5727617352178621,0.99999999995,1.0,
+vec_k4,q21,factoid,True,280.3,4,1.0,True,1.0,"No, the region is fixed at cluster creation and cannot be changed afterwards.",False,1.0,0.8560787249714199,0.7499999999625,1.0,
+vec_k4,q22,factoid,True,282.9,4,1.0,True,1.0,You can recover a deleted topic on the Starter plan for 48 hours.,False,1.0,0.9965638382049068,0.7499999999625,1.0,
+vec_k4,q23,negation,True,267.2,4,1.0,True,1.0,"Yes, the Growth plan includes daily backup snapshots.",False,0.0,1.0000000000000002,0.9999999999,1.0,
+vec_k4,q24,comparison,True,305.3,4,1.0,True,1.0,"The P1 response time on Scale is 1 hour, while on Enterprise it is 15 minutes. Therefore, the P1 response time on Scale is longer than on Enterprise.",False,1.0,0.9868970081475976,0.9999999999,1.0,
+vec_k4,q25,factoid,True,272.1,4,1.0,True,1.0,I don't have enough information.,True,1.0,0.0,0.9999999999666668,1.0,
+vec_k4,q26,exact_token,True,324.5,4,1.0,True,1.0,"No, a qs_test_ key works only with sandbox clusters and cannot be used against a production cluster.",False,1.0,0.9855279199058944,0.99999999995,1.0,
+vec_k4,q27,multi_hop,True,284.4,4,1.0,True,1.0,"The free trial does not need a credit card, and the refund policy does not apply to it.",False,1.0,0.9501053414346452,0.9999999999,1.0,
+vec_k4,q28,multi_hop,True,502.9,4,1.0,True,1.0,"If a card payment fails three times, the account is suspended. Data in a suspended account is retained for 30 days and then permanently deleted. Paying the outstanding balance within that window restores access.",False,1.0,0.999999773425027,0.9999999999,1.0,
+vec_k4,q29,factoid,True,291.9,4,1.0,True,1.0,"The Startup Program offers eligible companies 50% off the Growth plan for the first 12 months, capped at $5,000 in total credits.",False,1.0,0.7295992184897107,0.9999999999,1.0,
+vec_k4,q30,procedural,True,316.0,4,1.0,True,1.0,Creating a topic with 7-day retention fails on the Starter plan because the maximum retention setting for the Starter plan is 3 days.,False,1.0,1.0000000000000002,0.8055555555287036,1.0,
+vec_k4,q31,unanswerable,False,307.6,4,,,,I don't have enough information.,True,,,,,
+vec_k4,q32,unanswerable,False,288.6,4,,,,I don't have enough information.,True,,,,,
+vec_k8,q01,factoid,True,353.8,8,1.0,True,1.0,Quillstream-compatible clients are based on Kafka protocol version 3.6.,False,1.0,0.8502439355062605,0.99999999995,1.0,
+vec_k8,q02,table_lookup,True,258.4,8,1.0,True,1.0,"The Scale plan costs $2,400 per month and includes 40 TB of data transfer.",False,1.0,0.8529901354376249,0.9999999999,1.0,
+vec_k8,q03,table_lookup,True,304.6,8,1.0,True,1.0,The overage price per GB on the Growth plan is $0.09.,False,1.0,0.9465738345285836,0.9999999999,1.0,
+vec_k8,q04,numeric_reasoning,True,232.9,8,1.0,True,1.0,"A Growth customer would pay $3,588 for a year with annual billing. This is calculated by paying for 10 months at $399 per month, which totals $3,990, and then receiving two months free.",False,0.75,0.9835875393080096,0.7916666666402777,1.0,
+vec_k8,q05,multi_hop,True,308.9,8,0.5,True,0.5,The organization must delete at least 15 topics before it can downgrade from Growth to Starter.,False,1.0,0.8683251789005223,0.9666666666473333,0.6666666666666666,
+vec_k8,q06,multi_hop,True,226.4,8,1.0,True,1.0,"No, you cannot get a full refund because you have transferred more than 100 GB of data.",False,0.0,0.7292448741686447,0.961734693863812,0.5,
+vec_k8,q07,temporal,True,267.6,8,1.0,True,1.0,The refund window for monthly plans before 1 March 2026 was 30 days.,False,1.0,1.0000000000000002,0.9999999999,1.0,
+vec_k8,q08,temporal,True,227.8,8,1.0,True,1.0,I don't have enough information.,True,0.0,0.0,0.9999999999,1.0,
+vec_k8,q09,temporal,True,566.0,8,1.0,True,1.0,The maximum message size on Scale before version 4.2 was 2 MB.,False,1.0,0.9999997926098182,0.49999999995,0.5,
+vec_k8,q10,exact_token,True,629.9,8,1.0,True,1.0,"Error code ERR_4221 means ""Requested retention exceeds the plan maximum."" The recommended action is to lower the retention setting.",False,1.0,0.9479430078134046,0.9999999999,1.0,
+vec_k8,q11,exact_token,True,499.0,8,1.0,True,1.0,"A client should retry using exponential backoff with jitter when it receives ERR_5003. The recommended settings are an initial delay of 200 milliseconds, a multiplier of 2, a maximum of 5 attempts, and random jitter of up to 20% of each delay.",False,1.0,0.999999773378879,0.99999999995,1.0,
+vec_k8,q12,multi_hop,True,249.6,8,1.0,True,1.0,"The service credit for a Scale customer with 99.92% uptime falls under the category of ""25% if below 99.9% but at least 99.0%."" 
+
+To calculate the dollar amount of the service credit, we need the monthly price for the Scale plan, which is $2,400. 
+
+25% of $2,400 is calculated as follows:
+
+0.25 * $2,400 = $600.
+
+Therefore, the service credit applies is 25%, and the dollar amount is $600.",False,0.4,0.8949686913545946,0.9999999999666668,1.0,
+vec_k8,q13,factoid,True,232.1,8,1.0,True,1.0,Customers must claim a service credit within 30 days after the end of the affected month.,False,0.3333333333333333,0.9168675669658316,0.8333333332916666,1.0,
+vec_k8,q14,exclusion,True,247.4,8,1.0,True,1.0,"No, scheduled maintenance does not count as downtime if it was announced at least 72 hours in advance and does not exceed 4 hours in a calendar month.",False,1.0,0.8955519484758455,0.9999999999,1.0,
+vec_k8,q15,table_lookup,True,246.6,8,1.0,True,1.0,"The produce rate limit on the Scale plan is 10,000 requests per second.",False,1.0,0.9999997476913084,0.9999999999,1.0,
+vec_k8,q16,procedural,True,224.4,8,1.0,True,1.0,"Quillstream recommends the following retry settings for transient errors: an initial delay of 200 milliseconds, a multiplier of 2, a maximum of 5 attempts, and random jitter of up to 20% of each delay.",False,1.0,0.9999997111331436,0.9999999999,1.0,
+vec_k8,q17,negation,True,233.3,8,1.0,True,1.0,"Clients should not retry the following error codes: ERR_4031, ERR_4091, ERR_4093, ERR_4132, and ERR_4221.",False,1.0,0.9907393264134204,0.99999999995,1.0,
+vec_k8,q18,access_control,True,229.1,8,1.0,True,1.0,"No, a user with the Billing role cannot view topic data.",False,1.0,1.0,0.9999999999,0.5,
+vec_k8,q19,access_control,True,279.8,8,1.0,True,1.0,Only the Owner role is allowed to delete the organization.,False,0.0,0.8773940988113599,0.9999999999,1.0,
+vec_k8,q20,factoid,True,247.4,8,1.0,True,1.0,The Enterprise plan can get a HIPAA business associate agreement.,False,1.0,0.5727584031129987,0.99999999995,1.0,
+vec_k8,q21,factoid,True,271.6,8,1.0,True,1.0,"No, the region is fixed at cluster creation and cannot be changed afterwards. Moving to another region requires creating a new cluster.",False,1.0,0.8480857573176194,0.7499999999625,1.0,
+vec_k8,q22,factoid,True,308.8,8,1.0,True,1.0,You can recover a deleted topic on the Starter plan for 48 hours.,False,0.0,0.9965617420773588,0.7499999999625,1.0,
+vec_k8,q23,negation,True,242.5,8,1.0,True,1.0,"No, the Growth plan does not include daily backup snapshots.",False,1.0,0.9999996458527056,0.6666666666333333,1.0,
+vec_k8,q24,comparison,True,240.6,8,1.0,True,1.0,"The P1 response time on Scale is 1 hour, while on Enterprise it is 15 minutes.",False,1.0,0.953060415069367,0.9999999999,1.0,
+vec_k8,q25,factoid,True,241.5,8,1.0,True,1.0,I don't have enough information.,True,0.0,0.0,0.9999999999666668,1.0,
+vec_k8,q26,exact_token,True,274.5,8,1.0,True,1.0,"No, a qs_test_ key works only with sandbox clusters and cannot be used against a production cluster.",False,1.0,0.9855261136939024,0.99999999995,1.0,
+vec_k8,q27,multi_hop,True,214.6,8,1.0,True,1.0,"The free trial does not need a credit card, and the refund policy does not apply to it.",False,1.0,0.948102308433878,0.9999999999,1.0,
+vec_k8,q28,multi_hop,True,241.6,8,1.0,True,1.0,"If a card payment fails three times, the account is suspended. Data in a suspended account is retained for 30 days and then permanently deleted. Paying the outstanding balance within that window restores access.",False,1.0,0.9999996601375404,0.9999999999,1.0,
+vec_k8,q29,factoid,True,244.1,8,1.0,True,1.0,"The Startup Program offers eligible companies 50% off the Growth plan for the first 12 months, capped at $5,000 in total credits.",False,1.0,0.7294976129818869,0.9999999999,1.0,
+vec_k8,q30,procedural,True,298.2,8,1.0,True,1.0,Creating a topic with 7-day retention fails on the Starter plan because the maximum retention setting for the Starter plan is 3 days.,False,1.0,0.9999996403462508,0.7861904761747525,1.0,
+vec_k8,q31,unanswerable,False,310.9,8,,,,I don't have enough information.,True,,,,,
+vec_k8,q32,unanswerable,False,389.4,8,,,,I don't have enough information.,True,,,,,
+hybrid_k4,q01,factoid,True,531.6,14,1.0,True,1.0,Quillstream-compatible clients are based on Kafka protocol version 3.6.,False,1.0,0.8502439355062605,0.99999999995,1.0,
+hybrid_k4,q02,table_lookup,True,439.1,14,1.0,True,1.0,"The Scale plan costs $2,400 per month and includes 40 TB of data transfer.",False,1.0,0.8172207593721458,0.9999999999,1.0,
+hybrid_k4,q03,table_lookup,True,229.7,13,1.0,True,1.0,The overage price per GB on the Growth plan is $0.09.,False,1.0,0.9999995308895944,0.9999999999,1.0,
+hybrid_k4,q04,numeric_reasoning,True,233.6,15,0.5,True,1.0,"A Growth customer who pays annually would pay for 10 months and use 12, which means they receive two months free. Therefore, the total amount paid for a year would be the price of 10 months of the Growth plan. However, the specific price of the Growth plan is not provided in the context, so I don't have enough information to calculate the total amount.",True,0.8333333333333334,0.0,0.9999999999,0.0,
+hybrid_k4,q05,multi_hop,True,240.0,16,0.5,True,1.0,The organization must delete at least 15 topics before it can downgrade from Growth to Starter.,False,0.5,0.8683690649207275,0.9999999999666668,0.6666666666666666,
+hybrid_k4,q06,multi_hop,True,281.2,15,1.0,True,1.0,"No, you cannot get a full refund because you have transferred more than 100 GB of data.",False,0.0,0.726275122041689,0.999999999975,0.5,
+hybrid_k4,q07,temporal,True,570.5,13,1.0,True,1.0,The refund window for monthly plans before 1 March 2026 was 30 days.,False,1.0,1.0000000000000002,0.9999999999,1.0,
+hybrid_k4,q08,temporal,True,219.0,14,1.0,True,1.0,I don't have enough information.,True,0.0,0.0,0.9999999999,1.0,
+hybrid_k4,q09,temporal,True,287.3,14,1.0,True,1.0,The maximum message size on Scale before version 4.2 was 2 MB.,False,1.0,0.9999996889147272,0.49999999995,1.0,
+hybrid_k4,q10,exact_token,True,232.6,13,1.0,True,1.0,"Error code ERR_4221 means ""Requested retention exceeds the plan maximum."" The recommended action is to lower the retention setting.",False,1.0,0.9376440750377684,0.9999999999,1.0,
+hybrid_k4,q11,exact_token,True,304.0,18,1.0,True,1.0,"A client should retry using exponential backoff with jitter when it receives ERR_5003. The recommended settings are an initial delay of 200 milliseconds, a multiplier of 2, a maximum of 5 attempts, and random jitter of up to 20% of each delay.",False,1.0,0.9999996001831772,0.99999999995,1.0,
+hybrid_k4,q12,multi_hop,True,279.7,14,0.5,True,1.0,"The Scale customer measured 99.92% uptime, which is below 99.95% but at least 99.0%. According to the context, this qualifies for a 25% service credit. However, the context does not provide the monthly fee amount for the Scale customer, so I don't have enough information to calculate the dollar amount of the service credit.",True,0.3333333333333333,0.0,0.9999999999666668,0.5,
+hybrid_k4,q13,factoid,True,247.0,17,1.0,True,1.0,Customers have 30 days after the end of the affected month to claim a service credit.,False,1.0,0.9168755585418008,0.249999999975,1.0,
+hybrid_k4,q14,exclusion,True,240.9,13,1.0,True,1.0,"No, scheduled maintenance does not count as downtime if it was announced at least 72 hours in advance and does not exceed 4 hours in a calendar month.",False,1.0,0.8955520785089005,0.9999999999,1.0,
+hybrid_k4,q15,table_lookup,True,318.0,17,1.0,True,1.0,"The produce rate limit on the Scale plan is 10,000 requests per second.",False,1.0,0.9999996215369628,0.9999999999,1.0,
+hybrid_k4,q16,procedural,True,253.6,12,1.0,True,1.0,"Quillstream recommends the following retry settings for transient errors: an initial delay of 200 milliseconds, a multiplier of 2, a maximum of 5 attempts, and random jitter of up to 20% of each delay.",False,1.0,0.9999997111331436,0.9999999999,1.0,
+hybrid_k4,q17,negation,True,230.9,13,1.0,True,1.0,"Clients should not retry the following error codes: ERR_4031, ERR_4091, ERR_4093, ERR_4132, and ERR_4221.",False,1.0,1.0,0.7499999999625,1.0,
+hybrid_k4,q18,access_control,True,220.0,14,1.0,True,1.0,"No, a user with the Billing role cannot view topic data.",False,1.0,0.9999995162517616,0.9999999999,1.0,
+hybrid_k4,q19,access_control,True,230.7,15,1.0,True,1.0,Only the Owner role is allowed to delete the organization.,False,0.0,0.8773940988113599,0.9999999999,1.0,
+hybrid_k4,q20,factoid,True,276.8,16,1.0,True,1.0,The Enterprise plan can get a HIPAA business associate agreement.,False,1.0,0.5727517389032719,0.9999999999,1.0,
+hybrid_k4,q21,factoid,True,263.0,15,1.0,True,1.0,"No, you cannot change the region of an existing cluster. Moving to another region requires creating a new cluster.",False,1.0,0.989943541134034,0.9999999999,1.0,
+hybrid_k4,q22,factoid,True,220.1,15,1.0,True,1.0,You can recover a deleted topic on the Starter plan for 48 hours.,False,1.0,0.9965638382049068,0.9999999999,1.0,
+hybrid_k4,q23,negation,True,306.4,14,1.0,True,1.0,"No, the Growth plan does not include daily backup snapshots.",False,1.0,0.9999996352163208,0.8333333332916666,1.0,
+hybrid_k4,q24,comparison,True,220.7,14,1.0,True,1.0,"The P1 response time on Scale is 1 hour, while the P1 response time on Enterprise is 15 minutes. Therefore, the P1 response time on Scale is longer than that on Enterprise.",False,1.0,0.9737574160206948,0.9999999999,1.0,
+hybrid_k4,q25,factoid,True,261.2,16,0.0,False,1.0,I don't have enough information.,True,0.0,0.0,0.0,0.0,
+hybrid_k4,q26,exact_token,True,300.2,14,1.0,True,1.0,"No, a qs_test_ key cannot be used against a production cluster.",False,1.0,0.9999997154508824,0.99999999995,1.0,
+hybrid_k4,q27,multi_hop,True,235.1,13,1.0,True,1.0,"The free trial does not need a credit card, and the refund policy does not apply to it.",False,1.0,0.9508973003104608,0.9999999999,1.0,
+hybrid_k4,q28,multi_hop,True,230.1,17,1.0,True,1.0,"If a card payment fails three times, the account is suspended. Data in a suspended account is retained for 30 days and then permanently deleted. Paying the outstanding balance within that window restores access.",False,1.0,0.999999773425027,0.9999999999,1.0,
+hybrid_k4,q29,factoid,True,257.8,15,1.0,True,1.0,"The Startup Program offers eligible companies 50% off the Growth plan for the first 12 months, capped at $5,000 in total credits.",False,1.0,0.7584189082101273,0.9999999999,1.0,
+hybrid_k4,q30,procedural,True,237.1,13,1.0,True,1.0,Creating a topic with 7-day retention fails on the Starter plan because the maximum retention setting for the Starter plan is 3 days.,False,1.0,1.0000000000000002,0.9999999999666668,1.0,
+hybrid_k4,q31,unanswerable,False,406.5,14,,,,I don't have enough information.,True,,,,,
+hybrid_k4,q32,unanswerable,False,228.6,15,,,,I don't have enough information.,True,,,,,
+hybrid_k8,q01,factoid,True,482.7,14,1.0,True,1.0,Quillstream-compatible clients are based on Kafka protocol version 3.6.,False,1.0,0.8502795128541395,0.99999999995,1.0,
+hybrid_k8,q02,table_lookup,True,249.4,14,1.0,True,1.0,"The Scale plan costs $2,400 per month and includes 40 TB of data transfer.",False,1.0,0.8437137506653988,0.9999999999,1.0,
+hybrid_k8,q03,table_lookup,True,310.4,13,1.0,True,1.0,The overage price per GB on the Growth plan is $0.09.,False,1.0,0.946610984008878,0.9999999999,1.0,
+hybrid_k8,q04,numeric_reasoning,True,309.9,15,1.0,True,1.0,"A Growth customer would pay $3,588 for a year with annual billing, as they receive two months free when paying annually ($399 per month for 10 months).",False,0.3333333333333333,0.9835875393080096,0.5694444444254629,1.0,
+hybrid_k8,q05,multi_hop,True,238.7,16,0.5,True,1.0,The organization must delete at least 15 topics before it can downgrade from Growth to Starter.,False,1.0,0.8682988804258321,0.9266666666481332,1.0,
+hybrid_k8,q06,multi_hop,True,239.1,15,1.0,True,1.0,"No, you cannot get a full refund because you have transferred more than 100 GB of data.",False,0.0,0.7309004430777394,0.961734693863812,0.5,
+hybrid_k8,q07,temporal,True,307.4,13,1.0,True,1.0,The refund window for monthly plans before 1 March 2026 was 30 days.,False,1.0,1.0000000000000002,0.9999999999,1.0,
+hybrid_k8,q08,temporal,True,510.5,14,1.0,True,1.0,I don't have enough information.,True,1.0,0.0,0.9999999999,1.0,
+hybrid_k8,q09,temporal,True,223.6,14,1.0,True,1.0,The maximum message size on Scale before version 4.2 was 2 MB.,False,1.0,0.9999996889147272,0.49999999995,1.0,
+hybrid_k8,q10,exact_token,True,290.5,13,1.0,True,1.0,"Error code ERR_4221 means ""Requested retention exceeds the plan maximum."" The recommended action is to lower the retention setting.",False,1.0,0.9427935414255866,0.9999999999,1.0,
+hybrid_k8,q11,exact_token,True,255.8,18,1.0,True,1.0,"A client should retry using exponential backoff with jitter when it receives ERR_5003. The recommended settings are an initial delay of 200 milliseconds, a multiplier of 2, a maximum of 5 attempts, and random jitter of up to 20% of each delay.",False,1.0,0.999999773378879,0.99999999995,1.0,
+hybrid_k8,q12,multi_hop,True,218.6,14,1.0,True,1.0,"A Scale customer measured 99.92% uptime, which is below 99.95% but at least 99.0%. According to the context, this qualifies for a 25% service credit. 
+
+The monthly price for the Scale plan is $2,400. Therefore, the service credit in dollars would be:
+
+25% of $2,400 = 0.25 * 2400 = $600.
+
+So, the service credit applies is 25%, and that amounts to $600.",False,0.9,0.8949686913545946,0.9999999999666668,1.0,
+hybrid_k8,q13,factoid,True,256.4,17,1.0,True,1.0,Customers have 30 days to claim a service credit after the end of the affected month.,False,1.0,0.90664549607804,0.2916666666520833,1.0,
+hybrid_k8,q14,exclusion,True,230.8,13,1.0,True,1.0,"No, scheduled maintenance does not count as downtime if it was announced at least 72 hours in advance and does not exceed 4 hours in a calendar month.",False,1.0,0.895551883459318,0.9999999999,1.0,
+hybrid_k8,q15,table_lookup,True,234.4,17,1.0,True,1.0,"The produce rate limit on the Scale plan is 10,000 requests per second.",False,1.0,0.9999996215369628,0.9999999999,1.0,
+hybrid_k8,q16,procedural,True,236.7,12,1.0,True,1.0,"Quillstream recommends the following retry settings for transient errors (ERR_5003 and ERR_4291):
+
+- Initial delay: 200 milliseconds
+- Multiplier: 2
+- Maximum attempts: 5
+- Random jitter: up to 20% of each delay.",False,1.0,0.9522567823901466,0.9999999999,1.0,
+hybrid_k8,q17,negation,True,228.9,13,1.0,True,1.0,"Clients should not retry the following error codes: ERR_4031, ERR_4091, ERR_4093, ERR_4132, and ERR_4221.",False,1.0,0.9907393264134202,0.7499999999625,1.0,
+hybrid_k8,q18,access_control,True,243.5,14,1.0,True,1.0,"No, a user with the Billing role cannot view topic data.",False,1.0,0.9999997068432492,0.9999999999,0.5,
+hybrid_k8,q19,access_control,True,507.9,15,1.0,True,1.0,Only the Owner role is allowed to delete the organization.,False,1.0,0.8773940988113599,0.9999999999,1.0,
+hybrid_k8,q20,factoid,True,239.9,16,1.0,True,1.0,The Enterprise plan can get a HIPAA business associate agreement.,False,1.0,0.5637798329596518,0.699999999965,1.0,
+hybrid_k8,q21,factoid,True,306.4,15,1.0,True,1.0,"No, the region is fixed at cluster creation and cannot be changed afterwards. Moving to another region requires creating a new cluster.",False,1.0,0.8480921085243195,0.642857142825,1.0,
+hybrid_k8,q22,factoid,True,244.7,15,1.0,True,1.0,You can recover a deleted topic on the Starter plan for 48 hours.,False,0.0,0.9965601629031992,0.642857142825,1.0,
+hybrid_k8,q23,negation,True,246.4,14,1.0,True,1.0,"No, the Growth plan does not include daily backup snapshots. It is only protected by replication.",False,1.0,0.9999997898418024,0.8333333332916666,1.0,
+hybrid_k8,q24,comparison,True,252.3,14,1.0,True,1.0,"The P1 response time on Scale is 1 hour, while on Enterprise it is 15 minutes. Therefore, the P1 response time on Scale is longer than on Enterprise.",False,1.0,0.9736911666402764,0.9999999999,1.0,
+hybrid_k8,q25,factoid,True,219.4,16,1.0,True,1.0,No. Quillstream is available only as a managed cloud service.,False,1.0,0.7591174092781882,0.3206349206242327,1.0,
+hybrid_k8,q26,exact_token,True,242.3,14,1.0,True,1.0,"No, a qs_test_ key cannot be used against a production cluster.",False,1.0,0.9999998103005884,0.99999999995,1.0,
+hybrid_k8,q27,multi_hop,True,237.6,13,1.0,True,1.0,"The free trial does not need a credit card, and the refund policy does not apply to it.",False,1.0,0.9489657490701444,0.9999999999,1.0,
+hybrid_k8,q28,multi_hop,True,243.0,17,1.0,True,1.0,"If a card payment fails three times, the account is suspended. Data in a suspended account is retained for 30 days and then permanently deleted. Paying the outstanding balance within that window restores access.",False,1.0,1.0,0.9999999999,1.0,
+hybrid_k8,q29,factoid,True,256.9,15,1.0,True,1.0,"The Startup Program offers eligible companies 50% off the Growth plan for the first 12 months, capped at $5,000 in total credits.",False,1.0,0.7294784780268851,0.9999999999,1.0,
+hybrid_k8,q30,procedural,True,234.1,13,1.0,True,1.0,Creating a topic with 7-day retention fails on the Starter plan because the maximum retention setting for the Starter plan is 3 days.,False,1.0,0.9999995564425688,0.8928571428348213,1.0,
+hybrid_k8,q31,unanswerable,False,620.3,14,,,,I don't have enough information.,True,,,,,
+hybrid_k8,q32,unanswerable,False,259.8,15,,,,I don't have enough information.,True,,,,,
+vec_rerank_top4,q01,factoid,True,257947.8,10,1.0,True,1.0,Quillstream-compatible clients are based on Kafka protocol 3.6.,False,1.0,0.807142151031572,0.99999999995,1.0,0.9997
+vec_rerank_top4,q02,table_lookup,True,1788.9,10,1.0,True,1.0,"The Scale plan costs $2,400 per month and includes 40 TB of data transfer.",False,1.0,0.8529958023945322,0.9999999999,1.0,0.8529
+vec_rerank_top4,q03,table_lookup,True,852.8,10,1.0,True,1.0,The overage price per GB on the Growth plan is $0.09.,False,1.0,0.99999955529776,0.9999999999,1.0,0.4354
+vec_rerank_top4,q04,numeric_reasoning,True,6565.6,10,1.0,True,1.0,"A Growth customer who pays annually would receive two months free, meaning they pay for 10 months. The monthly price for the Growth plan is $399. Therefore, the total cost for a year with annual billing would be:
+
+10 months x $399 = $3,990. 
+
+So, a Growth customer would pay $3,990 in total for a year with annual billing.",False,1.0,0.8972515484798341,0.7499999999625,1.0,0.5544
+vec_rerank_top4,q05,multi_hop,True,1065.4,10,0.5,True,1.0,"The organization must delete at least 15 topics before it can downgrade from Growth to Starter, as its current usage exceeds the limits of the target plan.",False,0.6666666666666666,0.8587108053795904,0.999999999975,0.6666666666666666,0.6183
+vec_rerank_top4,q06,multi_hop,True,798.3,10,1.0,True,1.0,"No, you cannot get a full refund because you have transferred more than 100 GB of data.",False,0.0,0.727907657349534,0.99999999995,1.0,0.9867
+vec_rerank_top4,q07,temporal,True,894.6,10,1.0,True,1.0,The refund window for monthly plans before 1 March 2026 was 30 days.,False,1.0,1.0,0.9999999999,1.0,0.9995
+vec_rerank_top4,q08,temporal,True,719.6,10,1.0,True,1.0,The Growth plan cost $349 per month before version 4.0.,False,1.0,0.967055178419071,0.9999999999,1.0,0.9387
+vec_rerank_top4,q09,temporal,True,871.0,10,1.0,True,1.0,The maximum message size on Scale before version 4.2 was 2 MB.,False,1.0,1.0,0.9999999999,0.5,0.9907
+vec_rerank_top4,q10,exact_token,True,745.8,10,1.0,True,1.0,"Error code ERR_4221 means ""Requested retention exceeds the plan maximum."" The recommended action is to lower the retention setting.",False,1.0,0.9495635229418794,0.9999999999,1.0,0.0719
+vec_rerank_top4,q11,exact_token,True,937.3,10,1.0,True,1.0,"When a client receives ERR_5003, they should retry the request using exponential backoff with jitter. The recommended settings are an initial delay of 200 milliseconds, a multiplier of 2, a maximum of 5 attempts, and random jitter of up to 20% of each delay.",False,1.0,0.990522298519712,0.99999999995,1.0,0.0191
+vec_rerank_top4,q12,multi_hop,True,905.0,10,0.5,True,1.0,"The Scale customer measured 99.92% uptime, which is below 99.95% but at least 99.9%. According to the context, this qualifies for a 10% service credit. 
+
+To determine the dollar amount of the service credit, we need the monthly fee for the Scale plan, which is not provided in the context. Therefore, I don't have enough information to calculate the dollar amount of the service credit.",True,0.4285714285714285,0.0,0.99999999995,0.5,0.9731
+vec_rerank_top4,q13,factoid,True,664.6,10,1.0,True,1.0,Customers must claim a service credit within 30 days after the end of the affected month.,False,0.6666666666666666,0.9119098898847534,0.9999999999,1.0,0.8003
+vec_rerank_top4,q14,exclusion,True,647.2,10,1.0,True,1.0,"No, scheduled maintenance does not count as downtime for the SLA if it was announced at least 72 hours in advance and does not exceed 4 hours in a calendar month.",False,1.0,0.9999996857981658,0.9999999999,1.0,0.9968
+vec_rerank_top4,q15,table_lookup,True,685.0,10,0.0,False,1.0,I don't have enough information.,True,0.0,0.0,0.0,0.0,0.4545
+vec_rerank_top4,q16,procedural,True,699.8,10,1.0,True,1.0,"Quillstream recommends the following retry settings for transient errors (ERR_5003 and ERR_4291): an initial delay of 200 milliseconds, a multiplier of 2, a maximum of 5 attempts, and random jitter of up to 20% of each delay.",False,1.0,0.9761189766089916,0.49999999995,1.0,0.6644
+vec_rerank_top4,q17,negation,True,4670.0,10,1.0,True,1.0,"Clients should not retry the following error codes: ERR_4031, ERR_4091, ERR_4093, ERR_4132, and ERR_4221.",False,1.0,0.995364038878356,0.5833333333041666,1.0,0.7717
+vec_rerank_top4,q18,access_control,True,2872.1,10,1.0,True,1.0,"No, a user with the Billing role cannot view topic data.",False,1.0,0.9999995263916864,0.9999999999,1.0,0.9973
+vec_rerank_top4,q19,access_control,True,1671.6,10,1.0,True,1.0,Only the Owner role is allowed to delete the organization.,False,0.0,0.8773613501739347,0.9999999999,1.0,0.9505
+vec_rerank_top4,q20,factoid,True,1328.1,10,1.0,True,1.0,The Enterprise plan can get a HIPAA business associate agreement.,False,1.0,0.5620516410478315,0.99999999995,1.0,0.9908
+vec_rerank_top4,q21,factoid,True,2373.7,10,1.0,True,1.0,"No, you cannot change the region of an existing cluster. Moving to another region requires creating a new cluster and mirroring the topics.",False,1.0,0.989932259995553,0.49999999995,1.0,0.0471
+vec_rerank_top4,q22,factoid,True,1134.1,10,1.0,True,1.0,You can recover a deleted topic on the Starter plan for 48 hours.,False,1.0,0.9965693589449393,0.9999999999,1.0,0.9998
+vec_rerank_top4,q23,negation,True,1600.5,10,1.0,True,1.0,"No, the Growth plan does not include daily backup snapshots.",False,0.0,0.9999996568218346,0.99999999995,1.0,0.994
+vec_rerank_top4,q24,comparison,True,1765.6,10,1.0,True,1.0,"The P1 response time on Scale is 1 hour, while the P1 response time on Enterprise is 15 minutes.",False,1.0,0.9413820427988546,0.3333333333,1.0,0.8404
+vec_rerank_top4,q25,factoid,True,1591.7,10,1.0,True,1.0,I don't have enough information.,True,1.0,0.0,0.99999999995,1.0,0.1568
+vec_rerank_top4,q26,exact_token,True,2283.9,10,1.0,True,1.0,"No, a qs_test_ key cannot be used against a production cluster.",False,1.0,0.999999668787679,0.99999999995,1.0,0.9994
+vec_rerank_top4,q27,multi_hop,True,1744.9,10,1.0,True,1.0,"The free trial does not need a credit card, and the refund policy does not apply to it.",False,1.0,0.9480524673103382,0.9999999999,1.0,0.2911
+vec_rerank_top4,q28,multi_hop,True,5792.8,10,1.0,True,1.0,"If a card payment fails three times, the account is suspended.",False,1.0,1.0,0.9999999999,1.0,0.9956
+vec_rerank_top4,q29,factoid,True,5138.9,10,1.0,True,1.0,"The Startup Program offers eligible companies 50% off the Growth plan for the first 12 months, capped at $5,000 in total credits.",False,1.0,0.7294803989585757,0.9999999999,1.0,0.0505
+vec_rerank_top4,q30,procedural,True,1524.4,10,1.0,True,1.0,Creating a topic with a 7-day retention fails on the Starter plan because the maximum retention setting for the Starter plan is 3 days.,False,1.0,0.9962130710286384,0.9166666666361112,1.0,0.94
+vec_rerank_top4,q31,unanswerable,False,1242.9,10,,,,I don't have enough information.,True,,,,,0.28
+vec_rerank_top4,q32,unanswerable,False,1421.7,10,,,,I don't have enough information.,True,,,,,0.0681
+hybrid_rerank_top4,q01,factoid,True,19223.2,14,1.0,True,1.0,Quillstream-compatible clients are based on Kafka protocol 3.6.,False,1.0,0.8070723991375228,0.99999999995,1.0,0.9997
+hybrid_rerank_top4,q02,table_lookup,True,1129.5,14,1.0,True,1.0,"The Scale plan costs $2,400 per month and includes 40 TB of data transfer.",False,1.0,0.8709075615289356,0.9999999999,1.0,0.8529
+hybrid_rerank_top4,q03,table_lookup,True,1122.1,13,1.0,True,1.0,The overage price per GB on the Growth plan is $0.09.,False,1.0,0.9467652331667638,0.9999999999,1.0,0.4354
+hybrid_rerank_top4,q04,numeric_reasoning,True,981.1,15,1.0,True,1.0,"A Growth customer would pay for 10 months at the monthly price of $399, which totals $3,990 for the year.",False,1.0,0.9327513563115224,0.7499999999625,1.0,0.5544
+hybrid_rerank_top4,q05,multi_hop,True,1292.2,16,0.5,True,1.0,"The organization must delete at least 15 topics before it can downgrade from Growth to Starter, as its current usage exceeds the limits of the target plan.",False,0.6666666666666666,0.8590673765438627,0.999999999975,0.6666666666666666,0.6183
+hybrid_rerank_top4,q06,multi_hop,True,1061.2,15,1.0,True,1.0,"No, you cannot get a full refund because you have transferred more than 100 GB of data.",False,0.0,0.7279295605275795,0.99999999995,1.0,0.9867
+hybrid_rerank_top4,q07,temporal,True,1038.1,13,1.0,True,1.0,The refund window for monthly plans before 1 March 2026 was 30 days.,False,1.0,0.9999995732630632,0.9999999999,1.0,0.9995
+hybrid_rerank_top4,q08,temporal,True,2229.2,14,1.0,True,1.0,I don't have enough information.,True,1.0,0.0,0.9999999999,1.0,0.9387
+hybrid_rerank_top4,q09,temporal,True,1273.5,14,1.0,True,1.0,The maximum message size on Scale before version 4.2 was 2 MB.,False,1.0,1.0,0.9999999999,0.5,0.9907
+hybrid_rerank_top4,q10,exact_token,True,1201.9,13,1.0,True,1.0,"Error code ERR_4221 means ""Requested retention exceeds the plan maximum."" The recommended action is to lower the retention setting.",False,1.0,0.9376653000327744,0.99999999995,1.0,0.0719
+hybrid_rerank_top4,q11,exact_token,True,1182.0,18,1.0,True,1.0,"When a client receives ERR_5003, it should retry the request using exponential backoff with jitter. The recommended settings are an initial delay of 200 milliseconds, a multiplier of 2, a maximum of 5 attempts, and random jitter of up to 20% of each delay.",False,1.0,0.9999996482164624,0.99999999995,1.0,0.0191
+hybrid_rerank_top4,q12,multi_hop,True,1177.9,14,0.5,True,1.0,"The Scale customer measured 99.92% uptime, which is below 99.95% but at least 99.0%. According to the context, this qualifies for a 25% service credit. However, the dollar amount of the service credit cannot be determined without knowing the monthly fee for the Scale plan. Therefore, I don't have enough information to provide the dollar amount.",True,0.3333333333333333,0.0,0.99999999995,0.5,0.9731
+hybrid_rerank_top4,q13,factoid,True,1304.6,17,1.0,True,1.0,Customers must claim a service credit within 30 days after the end of the affected month.,False,0.6666666666666666,0.9119098898847534,0.9999999999,1.0,0.8003
+hybrid_rerank_top4,q14,exclusion,True,1066.3,13,1.0,True,1.0,"No, scheduled maintenance does not count as downtime for the SLA if it was announced at least 72 hours in advance and does not exceed 4 hours in a calendar month.",False,1.0,0.9999996857981658,0.9999999999,1.0,0.9968
+hybrid_rerank_top4,q15,table_lookup,True,1171.0,17,0.0,False,1.0,I don't have enough information.,True,0.0,0.0,0.0,0.0,0.4545
+hybrid_rerank_top4,q16,procedural,True,990.6,12,1.0,True,1.0,"Quillstream recommends the following retry settings for transient errors (ERR_5003 and ERR_4291): an initial delay of 200 milliseconds, a multiplier of 2, a maximum of 5 attempts, and random jitter of up to 20% of each delay.",False,1.0,0.9761428545296532,0.49999999995,1.0,0.6644
+hybrid_rerank_top4,q17,negation,True,2122.2,13,1.0,True,1.0,"Clients should not retry the following error codes: ERR_4031, ERR_4091, ERR_4093, ERR_4132, and ERR_4221.",False,1.0,0.9953642784304596,0.5833333333041666,1.0,0.7717
+hybrid_rerank_top4,q18,access_control,True,1030.3,14,1.0,True,1.0,"No, a user with the Billing role cannot view topic data.",False,1.0,0.9999995263916864,0.9999999999,1.0,0.9973
+hybrid_rerank_top4,q19,access_control,True,1303.6,15,1.0,True,1.0,Only the Owner role is allowed to delete the organization.,False,0.0,0.8773613501739347,0.9999999999,1.0,0.9505
+hybrid_rerank_top4,q20,factoid,True,1078.8,16,1.0,True,1.0,The HIPAA business associate agreement is available on the Enterprise plan only.,False,1.0,0.9119497701232868,0.99999999995,1.0,0.9908
+hybrid_rerank_top4,q21,factoid,True,2013.8,15,1.0,True,1.0,"No, you cannot change the region of an existing cluster. Moving to another region requires creating a new cluster and mirroring the topics.",False,1.0,0.989928544367482,0.49999999995,1.0,0.0471
+hybrid_rerank_top4,q22,factoid,True,1256.1,15,1.0,True,1.0,You can recover a deleted topic on the Starter plan for 48 hours.,False,1.0,0.9965658169047036,0.9999999999,1.0,0.9998
+hybrid_rerank_top4,q23,negation,True,988.9,14,1.0,True,1.0,"No, the Growth plan does not include daily backup snapshots.",False,0.0,1.0,0.99999999995,1.0,0.994
+hybrid_rerank_top4,q24,comparison,True,865.9,14,1.0,True,1.0,"The P1 response time on Scale is 1 hour, while the P1 response time on Enterprise is 15 minutes.",False,1.0,0.9413762839225226,0.3333333333,1.0,0.8404
+hybrid_rerank_top4,q25,factoid,True,882.4,16,1.0,True,1.0,I don't have enough information.,True,0.0,0.0,0.99999999995,1.0,0.1568
+hybrid_rerank_top4,q26,exact_token,True,1071.6,14,1.0,True,1.0,"No, a qs_test_ key cannot be used against a production cluster.",False,1.0,1.0000000000000002,0.99999999995,1.0,0.9994
+hybrid_rerank_top4,q27,multi_hop,True,991.3,13,1.0,True,1.0,"The free trial does not need a credit card, and the refund policy does not apply to it.",False,1.0,0.9480794909152798,0.9999999999,1.0,0.2911
+hybrid_rerank_top4,q28,multi_hop,True,1007.3,17,1.0,True,1.0,"If a card payment fails three times, the account is suspended.",False,1.0,0.99999968669704,0.9999999999,1.0,0.9956
+hybrid_rerank_top4,q29,factoid,True,864.0,15,1.0,True,1.0,"The Startup Program offers eligible companies 50% off the Growth plan for the first 12 months, capped at $5,000 in total credits.",False,1.0,0.7294958818351489,0.9999999999,1.0,0.0505
+hybrid_rerank_top4,q30,procedural,True,922.3,13,1.0,True,1.0,Creating a topic with 7-day retention fails on the Starter plan because the maximum retention setting for the Starter plan is 3 days.,False,1.0,1.0,0.9166666666361112,1.0,0.94
+hybrid_rerank_top4,q31,unanswerable,False,1042.2,14,,,,I don't have enough information.,True,,,,,0.28
+hybrid_rerank_top4,q32,unanswerable,False,1242.9,15,,,,I don't have enough information.,True,,,,,0.0681

@@ -1,7 +1,8 @@
-strategy,n_chunks,avg_chunks,max_chars,retrieval_ms,evidence_recall,hit_rate,abstain_rate_unanswerable,faithfulness,answer_relevancy,llm_context_precision_with_reference,context_recall
-fixed_500,29,491,500,298.2,0.8,0.833,1.0,0.794,0.777,0.858,0.867
-recursive_800,23,660,792,307.6,0.9,0.933,1.0,0.897,0.838,0.883,0.883
-recursive_300,23,660,792,304.0,0.9,0.933,1.0,0.883,0.838,0.897,0.883
-header_only,30,433,952,315.9,0.967,1.0,1.0,0.881,0.868,0.957,0.95
-header_recursive_800,32,411,713,289.7,0.967,1.0,1.0,0.911,0.853,0.962,0.967
-header_recursive_prefixed_600,38,436,678,309.8,0.933,0.967,1.0,1.0,0.915,,0.75
+strategy,status,mode,fingerprint,n_chunks,avg_chars,max_chars,retrieval_ms,evidence_recall,hit_rate,abstain_rate_unanswerable,false_refusal_rate_answerable,answer_relevancy,context_recall,faithfulness,llm_context_precision_with_reference,ragas_rows_ok,ragas_rows_expected
+fixed_500,complete,full,b0863da66823851e,29,491,500,305.272,0.8,0.833,1.0,0.133,0.775,0.85,0.811,0.869,30,30
+recursive_800,complete,full,b0863da66823851e,23,660,792,293.128,0.9,0.933,1.0,0.067,0.857,0.9,0.894,0.9,30,30
+recursive_300,complete,full,b0863da66823851e,78,183,299,326.703,0.95,1.0,1.0,0.033,0.856,0.922,0.928,0.879,30,30
+header_only,complete,full,b0863da66823851e,30,433,952,295.812,0.967,1.0,1.0,0.067,0.865,0.944,0.881,0.965,30,30
+header_recursive_800,complete,full,b0863da66823851e,32,411,713,302.525,0.967,1.0,1.0,0.067,0.86,0.967,0.878,0.955,30,30
+header_recursive_prefixed_600,complete,full,b0863da66823851e,38,436,678,294.188,0.933,0.967,1.0,0.033,0.906,0.956,0.867,0.914,30,30
+semantic,complete,full,b0863da66823851e,9,1577,5036,295.753,0.967,0.967,1.0,0.1,0.801,0.967,0.773,0.682,30,30

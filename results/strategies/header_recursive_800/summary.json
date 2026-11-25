@@ -1,0 +1,20 @@
+{
+  "strategy": "header_recursive_800",
+  "status": "complete",
+  "mode": "full",
+  "fingerprint": "b0863da66823851e",
+  "n_chunks": 32,
+  "avg_chars": 411,
+  "max_chars": 713,
+  "retrieval_ms": 302.525,
+  "evidence_recall": 0.967,
+  "hit_rate": 1.0,
+  "abstain_rate_unanswerable": 1.0,
+  "false_refusal_rate_answerable": 0.067,
+  "answer_relevancy": 0.86,
+  "context_recall": 0.967,
+  "faithfulness": 0.878,
+  "llm_context_precision_with_reference": 0.955,
+  "ragas_rows_ok": 30,
+  "ragas_rows_expected": 30
+}
